@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
@@ -129,7 +130,44 @@ namespace ShoeAccounting
         //Авторизация: клик кнопки войти//
         private void enterButton_Click(object sender, EventArgs e)
         {
+            int Count = 0;
+            String query = "Select UsersDB.LastName,UsersDB.FirstName,UsersDB.Patronymic,UsersDB.Phone,UsersDB.Email,StatusUsersDB.NameStatusUsersDB from UsersDB join StatusUsersDB on UsersDB.id_StatusUsersDB = StatusUsersDB.Id_StatusUsersDB where Login = '" + logBox.Text + "' and Password = '" + passBox.Text + "';";
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            MySqlCommand cmDB = new MySqlCommand(query, conn);
+            MySqlDataReader rd;
+            cmDB.CommandTimeout = 60;
+            try
+            {
+                conn.Open();
+                rd = cmDB.ExecuteReader();
+                if(rd.HasRows)
+                {
+                    while(rd.Read())
+                    {
+                        string [] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5) };
+                        OurUserInfo.InsertIntoOurUserInfo(row);
+                    }
+                }
+                Count = 1;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка");
+                MessageBox.Show(ex.Message);
+            }
+            
+            if (Count > 0)
+            {
+                MainMenu win = new MainMenu();
+                win.Show();
+                this.Hide();
+            }
 
+            if (Count == 0)
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
     }
 }
