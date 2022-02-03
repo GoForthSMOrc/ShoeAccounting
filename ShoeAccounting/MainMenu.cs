@@ -25,7 +25,7 @@ namespace ShoeAccounting
                     OpenNewUserWinButton.Visible = false;
                     labelForAdmin.Visible = false;
                     break;
-                case ("Пользователь"):
+                case ("Клиент"):
                     OpenNewUserWinButton.Visible = false;
                     labelForAdmin.Visible = false;
                     OpenInsertWinButton.Visible = false;
@@ -37,7 +37,7 @@ namespace ShoeAccounting
 
         void getNameUser()
         {
-            USERFNAME = "Добро пожаловать, " + OurUserInfo.FName + "!";
+            USERFNAME = "Добро пожаловать, " + OurUserInfo.FName + " " + OurUserInfo.Patronymic + "!";
         }
 
         private string _userfname;
@@ -57,17 +57,22 @@ namespace ShoeAccounting
 
         private void OpenDeleteWinButton_Click(object sender, EventArgs e)
         {
-
+            DeleteRecord win = new DeleteRecord();
+            win.Show();
         }
 
         private void OpenUpdateWinButton_Click(object sender, EventArgs e)
         {
-
+            UpdateRecord win = new UpdateRecord();
+            win.Show();
+            this.Close();
         }
 
         private void OpenNewUserWinButton_Click(object sender, EventArgs e)
         {
-
+            AddUser win = new AddUser();
+            win.Show();
+            this.Close();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

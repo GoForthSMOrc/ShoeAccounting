@@ -147,8 +147,8 @@ namespace ShoeAccounting
                         string [] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5) };
                         OurUserInfo.InsertIntoOurUserInfo(row);
                     }
+                    Count = 1;
                 }
-                Count = 1;
                 conn.Close();
             }
             catch (Exception ex)
