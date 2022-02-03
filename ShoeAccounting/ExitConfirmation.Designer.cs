@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExitConfirmation));
             this.panelExitConfirmation = new System.Windows.Forms.Panel();
+            this.panelLine2 = new System.Windows.Forms.Panel();
             this.labelExitConfirmation = new System.Windows.Forms.Label();
             this.yesButton = new System.Windows.Forms.Button();
             this.notButton = new System.Windows.Forms.Button();
-            this.panelLine2 = new System.Windows.Forms.Panel();
             this.panelExitConfirmation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,16 @@
             this.panelExitConfirmation.Paint += new System.Windows.Forms.PaintEventHandler(this.panelExitConfirmation_Paint);
             this.panelExitConfirmation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelExitConfirmation_MouseDown);
             this.panelExitConfirmation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelExitConfirmation_MouseMove);
+            // 
+            // panelLine2
+            // 
+            this.panelLine2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panelLine2.Location = new System.Drawing.Point(0, 77);
+            this.panelLine2.Name = "panelLine2";
+            this.panelLine2.Size = new System.Drawing.Size(394, 10);
+            this.panelLine2.TabIndex = 3;
+            this.panelLine2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseDown);
+            this.panelLine2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseMove);
             // 
             // labelExitConfirmation
             // 
@@ -91,16 +101,6 @@
             this.notButton.UseVisualStyleBackColor = false;
             this.notButton.Click += new System.EventHandler(this.notButton_Click);
             // 
-            // panelLine2
-            // 
-            this.panelLine2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panelLine2.Location = new System.Drawing.Point(0, 77);
-            this.panelLine2.Name = "panelLine2";
-            this.panelLine2.Size = new System.Drawing.Size(394, 10);
-            this.panelLine2.TabIndex = 3;
-            this.panelLine2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseDown);
-            this.panelLine2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseMove);
-            // 
             // ExitConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -113,6 +113,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ExitConfirmation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExitConfirmation";
             this.Load += new System.EventHandler(this.ExitConfirmation_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ExitConfirmation_MouseDown);
