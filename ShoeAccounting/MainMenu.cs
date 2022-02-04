@@ -59,6 +59,7 @@ namespace ShoeAccounting
         {
             DeleteRecord win = new DeleteRecord();
             win.Show();
+            this.Close();
         }
 
         private void OpenUpdateWinButton_Click(object sender, EventArgs e)

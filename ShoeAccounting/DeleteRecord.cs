@@ -44,5 +44,12 @@ namespace ShoeAccounting
         {
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void closeWinButton_Click(object sender, EventArgs e)
+        {
+            MainMenu win = new MainMenu();
+            win.Show();
+            this.Close();
+        }
     }
 }

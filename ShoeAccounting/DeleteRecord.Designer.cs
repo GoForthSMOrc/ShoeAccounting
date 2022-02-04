@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteRecord));
             this.labelDeleteRec = new System.Windows.Forms.Label();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.closeWinButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelDeleteRec
@@ -51,12 +52,25 @@
             this.deleteButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.deleteButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deleteButton.ForeColor = System.Drawing.Color.White;
-            this.deleteButton.Location = new System.Drawing.Point(190, 368);
+            this.deleteButton.Location = new System.Drawing.Point(188, 329);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(294, 41);
             this.deleteButton.TabIndex = 13;
             this.deleteButton.Text = "Удалить запись";
             this.deleteButton.UseVisualStyleBackColor = false;
+            // 
+            // closeWinButton
+            // 
+            this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.closeWinButton.ForeColor = System.Drawing.Color.White;
+            this.closeWinButton.Location = new System.Drawing.Point(188, 376);
+            this.closeWinButton.Name = "closeWinButton";
+            this.closeWinButton.Size = new System.Drawing.Size(294, 41);
+            this.closeWinButton.TabIndex = 14;
+            this.closeWinButton.Text = "Закрыть окно";
+            this.closeWinButton.UseVisualStyleBackColor = false;
+            this.closeWinButton.Click += new System.EventHandler(this.closeWinButton_Click);
             // 
             // DeleteRecord
             // 
@@ -64,11 +78,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(653, 421);
+            this.Controls.Add(this.closeWinButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.labelDeleteRec);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteRecord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteRecord";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DeleteRecord_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DeleteRecord_MouseMove);
@@ -81,5 +97,6 @@
 
         private System.Windows.Forms.Label labelDeleteRec;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button closeWinButton;
     }
 }
