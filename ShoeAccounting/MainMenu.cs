@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
@@ -14,7 +15,7 @@ namespace ShoeAccounting
         {
             InitializeComponent();
             getNameUser();
-
+            getInfo(flowLayoutPanelShoeAccounting);
             switch (OurUserInfo.StatusU)
             {
                 case ("Администратор"):
@@ -35,6 +36,41 @@ namespace ShoeAccounting
             }
         }
 
+        void getInfo(FlowLayoutPanel panel)
+        {
+            flowLayoutPanelShoeAccounting.Controls.Clear();
+            String query = "Select ShoeAccounting.Id_ShoeAccounting, ShoeAccounting.DateRegistration,ShoeAccounting.DateOfCompletion, StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe order by ShoeAccounting.Id_ShoeAccounting ASC";
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            MySqlCommand cmDB = new MySqlCommand(query, conn);
+            MySqlDataReader rd;
+            cmDB.CommandTimeout = 60;
+            try
+            {
+                conn.Open();
+                rd = cmDB.ExecuteReader();
+                if(rd.HasRows)
+                {
+                    while(rd.Read())
+                    {
+                        string[] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3)};
+                        OurShoeInfo.InsertIntoOurShoeInfo(row);
+                        ShoeField shoeField = new ShoeField();
+                        shoeField.NUMBER = OurShoeInfo.Id;
+                        shoeField.DATEREGISTRATION = OurShoeInfo.DateReg;
+                        shoeField.DATECOMPLETION = OurShoeInfo.DateComp;
+                        shoeField.STATUSSHOE = OurShoeInfo.StatusShoe;
+
+                        flowLayoutPanelShoeAccounting.Controls.Add(shoeField);
+                    }
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка вывода списка");
+                MessageBox.Show(ex.Message);
+            }
+        }
         void getNameUser()
         {
             USERFNAME = "Добро пожаловать, " + OurUserInfo.FName + " " + OurUserInfo.Patronymic + "!";

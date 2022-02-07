@@ -40,8 +40,10 @@
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
             this.labelForAdmin = new System.Windows.Forms.Label();
+            this.shoeField1 = new ShoeAccounting.ShoeField();
             this.panelForMainMenu.SuspendLayout();
             this.panelWithButtons.SuspendLayout();
+            this.flowLayoutPanelShoeAccounting.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelFName
@@ -164,6 +166,7 @@
             // 
             // flowLayoutPanelShoeAccounting
             // 
+            this.flowLayoutPanelShoeAccounting.Controls.Add(this.shoeField1);
             this.flowLayoutPanelShoeAccounting.Location = new System.Drawing.Point(365, 115);
             this.flowLayoutPanelShoeAccounting.Name = "flowLayoutPanelShoeAccounting";
             this.flowLayoutPanelShoeAccounting.Size = new System.Drawing.Size(972, 540);
@@ -181,6 +184,18 @@
             this.labelForAdmin.Text = "Администратор";
             this.labelForAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseDown);
             this.labelForAdmin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseMove);
+            // 
+            // shoeField1
+            // 
+            this.shoeField1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.shoeField1.DATECOMPLETION = null;
+            this.shoeField1.DATEREGISTRATION = null;
+            this.shoeField1.Location = new System.Drawing.Point(3, 3);
+            this.shoeField1.Name = "shoeField1";
+            this.shoeField1.NUMBER = null;
+            this.shoeField1.Size = new System.Drawing.Size(950, 245);
+            this.shoeField1.STATUSSHOE = null;
+            this.shoeField1.TabIndex = 0;
             // 
             // MainMenu
             // 
@@ -202,6 +217,7 @@
             this.panelForMainMenu.ResumeLayout(false);
             this.panelForMainMenu.PerformLayout();
             this.panelWithButtons.ResumeLayout(false);
+            this.flowLayoutPanelShoeAccounting.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +236,6 @@
         private System.Windows.Forms.Button OpenInsertWinButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelShoeAccounting;
         private System.Windows.Forms.Label labelForAdmin;
+        private ShoeField shoeField1;
     }
 }

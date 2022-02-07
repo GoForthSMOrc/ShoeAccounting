@@ -40,6 +40,7 @@
             this.labelDateRegistration = new System.Windows.Forms.Label();
             this.labelDateCompletion = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.panelLine = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // showproblemButton
@@ -178,11 +179,20 @@
             this.labelStatus.TabIndex = 25;
             this.labelStatus.Text = "Статус";
             // 
+            // panelLine
+            // 
+            this.panelLine.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelLine.Location = new System.Drawing.Point(0, 240);
+            this.panelLine.Name = "panelLine";
+            this.panelLine.Size = new System.Drawing.Size(950, 5);
+            this.panelLine.TabIndex = 26;
+            // 
             // ShoeField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Controls.Add(this.panelLine);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelDateCompletion);
             this.Controls.Add(this.labelDateRegistration);
@@ -216,5 +226,6 @@
         private System.Windows.Forms.Label labelDateRegistration;
         private System.Windows.Forms.Label labelDateCompletion;
         private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Panel panelLine;
     }
 }
