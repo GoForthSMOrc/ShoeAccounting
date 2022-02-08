@@ -54,6 +54,7 @@
             this.showproblemButton.TabIndex = 14;
             this.showproblemButton.Text = "Описание проблемы";
             this.showproblemButton.UseVisualStyleBackColor = false;
+            this.showproblemButton.Click += new System.EventHandler(this.showproblemButton_Click);
             // 
             // showCommsButton
             // 
@@ -207,6 +208,7 @@
             this.Controls.Add(this.showproblemButton);
             this.Name = "ShoeField";
             this.Size = new System.Drawing.Size(950, 245);
+            this.MouseEnter += new System.EventHandler(this.ShoeField_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

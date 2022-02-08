@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
@@ -47,8 +48,16 @@ namespace ShoeAccounting
             set { _statusshoe = value; labelStatus.Text = value; }
         }
 
+        private void showproblemButton_Click(object sender, EventArgs e)
+        {
+            DescriptionProblem win = new DescriptionProblem();
+            win.Show();
+           
+        }
 
-
-
+        private void ShoeField_MouseEnter(object sender, EventArgs e)
+        {
+            NumberCheck.InsertIntoNumber(NUMBER);
+        }
     }
 }

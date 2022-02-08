@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
@@ -22,7 +23,23 @@ namespace ShoeAccounting
 
         private void insertButton_Click(object sender, EventArgs e)
         {
-
+            String query = "insert into ShoeAccounting (DateRegistration,DescriptionOfTheProblem,MasterComments,DateOfCompletion,id_UsersDB,id_Master,id_StatusShoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + 1 + "','" + 1 + "');";
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            MySqlCommand cmDB = new MySqlCommand(query, conn);
+            MySqlDataReader rd;
+            cmDB.CommandTimeout = 60;
+            try
+            {
+                conn.Open();
+                rd = cmDB.ExecuteReader();
+                MessageBox.Show("Запись успешно добавлена");
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка ввода");
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void closeWinButton_Click(object sender, EventArgs e)
@@ -158,6 +175,16 @@ namespace ShoeAccounting
         private void labelShoeStatus_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void masterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void shoestatBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

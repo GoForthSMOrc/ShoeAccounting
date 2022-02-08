@@ -42,10 +42,10 @@
             this.labelDescProb = new System.Windows.Forms.Label();
             this.labelMasterCom = new System.Windows.Forms.Label();
             this.closeWinButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.masterBox = new System.Windows.Forms.ComboBox();
             this.labelMaster = new System.Windows.Forms.Label();
             this.labelShoeStatus = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.shoestatBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelInsertNewRecord
@@ -194,14 +194,17 @@
             this.closeWinButton.UseVisualStyleBackColor = false;
             this.closeWinButton.Click += new System.EventHandler(this.closeWinButton_Click);
             // 
-            // comboBox1
+            // masterBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 361);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(294, 37);
-            this.comboBox1.TabIndex = 24;
+            this.masterBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.masterBox.FormattingEnabled = true;
+            this.masterBox.Items.AddRange(new object[] {
+            "Горцев И.И"});
+            this.masterBox.Location = new System.Drawing.Point(12, 361);
+            this.masterBox.Name = "masterBox";
+            this.masterBox.Size = new System.Drawing.Size(294, 37);
+            this.masterBox.TabIndex = 24;
+            this.masterBox.SelectedIndexChanged += new System.EventHandler(this.masterBox_SelectedIndexChanged);
             // 
             // labelMaster
             // 
@@ -229,14 +232,17 @@
             this.labelShoeStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelShoeStatus_MouseDown);
             this.labelShoeStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelShoeStatus_MouseMove);
             // 
-            // comboBox2
+            // shoestatBox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 443);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(294, 37);
-            this.comboBox2.TabIndex = 26;
+            this.shoestatBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.shoestatBox.FormattingEnabled = true;
+            this.shoestatBox.Items.AddRange(new object[] {
+            "Осмотр"});
+            this.shoestatBox.Location = new System.Drawing.Point(12, 443);
+            this.shoestatBox.Name = "shoestatBox";
+            this.shoestatBox.Size = new System.Drawing.Size(294, 37);
+            this.shoestatBox.TabIndex = 26;
+            this.shoestatBox.SelectedIndexChanged += new System.EventHandler(this.shoestatBox_SelectedIndexChanged);
             // 
             // InsertNewRecord
             // 
@@ -245,9 +251,9 @@
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1055, 684);
             this.Controls.Add(this.labelShoeStatus);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.shoestatBox);
             this.Controls.Add(this.labelMaster);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.masterBox);
             this.Controls.Add(this.closeWinButton);
             this.Controls.Add(this.labelMasterCom);
             this.Controls.Add(this.labelDescProb);
@@ -289,9 +295,9 @@
         private System.Windows.Forms.Label labelDescProb;
         private System.Windows.Forms.Label labelMasterCom;
         private System.Windows.Forms.Button closeWinButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox masterBox;
         private System.Windows.Forms.Label labelMaster;
         private System.Windows.Forms.Label labelShoeStatus;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox shoestatBox;
     }
 }
