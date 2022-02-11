@@ -61,6 +61,7 @@
             this.adduserButton.TabIndex = 14;
             this.adduserButton.Text = "Добавить пользователя";
             this.adduserButton.UseVisualStyleBackColor = false;
+            this.adduserButton.Click += new System.EventHandler(this.adduserButton_Click);
             // 
             // labelAddUser
             // 
@@ -141,6 +142,7 @@
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(421, 37);
             this.statusBox.TabIndex = 23;
+            this.statusBox.SelectedIndexChanged += new System.EventHandler(this.statusBox_SelectedIndexChanged);
             // 
             // labelLog
             // 

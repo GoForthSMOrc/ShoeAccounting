@@ -23,7 +23,7 @@ namespace ShoeAccounting
 
         private void insertButton_Click(object sender, EventArgs e)
         {
-            String query = "insert into ShoeAccounting (DateRegistration,DescriptionOfTheProblem,MasterComments,DateOfCompletion,id_UsersDB,id_Master,id_StatusShoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + 1 + "','" + 1 + "');";
+            String query = "insert into ShoeAccounting (DateRegistration,DescriptionOfTheProblem,MasterComments,DateOfCompletion,id_UsersDB,id_Master,id_StatusShoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "');";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -179,12 +179,36 @@ namespace ShoeAccounting
 
         private void masterBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            switch (masterBox.SelectedItem)
+            {
+                case ("Горцев И.И"):
+                    int Master = 1;
+                    MasterNumber.InsertIntoMasterNumbervalue(Master);
+                    break;
+                case ("Голубев В.И"):
+                    Master = 2;
+                    MasterNumber.InsertIntoMasterNumbervalue(Master);
+                    break;
+            }
         }
 
         private void shoestatBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            switch (shoestatBox.SelectedItem)
+            {
+                case ("Осмотр"):
+                    int StatusShoeNumber = 1;
+                    ShoeStatusNumber.InsertIntoShoeStatusNumbervalue(StatusShoeNumber);
+                    break;
+                case ("На ремонте"):
+                    StatusShoeNumber = 2;
+                    ShoeStatusNumber.InsertIntoShoeStatusNumbervalue(StatusShoeNumber);
+                    break;
+                case ("Ремонт окончен"):
+                    StatusShoeNumber = 3;
+                    ShoeStatusNumber.InsertIntoShoeStatusNumbervalue(StatusShoeNumber);
+                    break;
+            }
         }
     }
 }

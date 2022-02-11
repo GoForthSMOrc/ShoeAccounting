@@ -199,7 +199,8 @@
             this.masterBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.masterBox.FormattingEnabled = true;
             this.masterBox.Items.AddRange(new object[] {
-            "Горцев И.И"});
+            "Горцев И.И",
+            "Голубев В.И"});
             this.masterBox.Location = new System.Drawing.Point(12, 361);
             this.masterBox.Name = "masterBox";
             this.masterBox.Size = new System.Drawing.Size(294, 37);
@@ -237,7 +238,9 @@
             this.shoestatBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.shoestatBox.FormattingEnabled = true;
             this.shoestatBox.Items.AddRange(new object[] {
-            "Осмотр"});
+            "Осмотр",
+            "На ремонте",
+            "Ремонт окончен"});
             this.shoestatBox.Location = new System.Drawing.Point(12, 443);
             this.shoestatBox.Name = "shoestatBox";
             this.shoestatBox.Size = new System.Drawing.Size(294, 37);

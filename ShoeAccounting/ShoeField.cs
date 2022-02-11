@@ -55,9 +55,17 @@ namespace ShoeAccounting
            
         }
 
-        private void ShoeField_MouseEnter(object sender, EventArgs e)
+        private void ShoeField_Click(object sender, EventArgs e)
         {
-            NumberCheck.InsertIntoNumber(NUMBER);
+            if (BackColor == Color.CornflowerBlue)
+            {
+                NumberCheck.InsertIntoNumber(NUMBER);
+                BackColor = Color.Navy;
+            }
+            else
+            {
+                BackColor = Color.CornflowerBlue;
+            }
         }
     }
 }

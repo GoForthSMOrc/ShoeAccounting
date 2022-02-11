@@ -39,8 +39,8 @@
             this.OpenInsertWinButton = new System.Windows.Forms.Button();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelForAdmin = new System.Windows.Forms.Label();
             this.shoeField1 = new ShoeAccounting.ShoeField();
+            this.labelForAdmin = new System.Windows.Forms.Label();
             this.panelForMainMenu.SuspendLayout();
             this.panelWithButtons.SuspendLayout();
             this.flowLayoutPanelShoeAccounting.SuspendLayout();
@@ -166,11 +166,24 @@
             // 
             // flowLayoutPanelShoeAccounting
             // 
+            this.flowLayoutPanelShoeAccounting.AutoScroll = true;
             this.flowLayoutPanelShoeAccounting.Controls.Add(this.shoeField1);
             this.flowLayoutPanelShoeAccounting.Location = new System.Drawing.Point(365, 115);
             this.flowLayoutPanelShoeAccounting.Name = "flowLayoutPanelShoeAccounting";
             this.flowLayoutPanelShoeAccounting.Size = new System.Drawing.Size(972, 540);
             this.flowLayoutPanelShoeAccounting.TabIndex = 2;
+            // 
+            // shoeField1
+            // 
+            this.shoeField1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.shoeField1.DATECOMPLETION = null;
+            this.shoeField1.DATEREGISTRATION = null;
+            this.shoeField1.Location = new System.Drawing.Point(3, 3);
+            this.shoeField1.Name = "shoeField1";
+            this.shoeField1.NUMBER = null;
+            this.shoeField1.Size = new System.Drawing.Size(950, 245);
+            this.shoeField1.STATUSSHOE = null;
+            this.shoeField1.TabIndex = 0;
             // 
             // labelForAdmin
             // 
@@ -184,18 +197,6 @@
             this.labelForAdmin.Text = "Администратор";
             this.labelForAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseDown);
             this.labelForAdmin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseMove);
-            // 
-            // shoeField1
-            // 
-            this.shoeField1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.shoeField1.DATECOMPLETION = null;
-            this.shoeField1.DATEREGISTRATION = null;
-            this.shoeField1.Location = new System.Drawing.Point(3, 3);
-            this.shoeField1.Name = "shoeField1";
-            this.shoeField1.NUMBER = null;
-            this.shoeField1.Size = new System.Drawing.Size(950, 245);
-            this.shoeField1.STATUSSHOE = null;
-            this.shoeField1.TabIndex = 0;
             // 
             // MainMenu
             // 

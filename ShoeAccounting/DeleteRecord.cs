@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
@@ -50,6 +51,29 @@ namespace ShoeAccounting
             MainMenu win = new MainMenu();
             win.Show();
             this.Close();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            String query = "Delete from ShoeAccounting where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            MySqlCommand cmDB = new MySqlCommand(query, conn);
+            MySqlDataReader rd;
+            cmDB.CommandTimeout = 60;
+            try
+            {
+                conn.Open();
+                rd = cmDB.ExecuteReader();
+                MessageBox.Show("Запись удалена");
+                DeleteCheck.ChangeDeleteCheckMarkTrue();
+                NumberCheck.InsertIntoNumber(null);
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка удаления записи");
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

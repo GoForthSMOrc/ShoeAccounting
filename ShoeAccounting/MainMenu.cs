@@ -36,6 +36,16 @@ namespace ShoeAccounting
             }
         }
 
+        void DeleteCheckInfo()
+        {
+            if(DeleteCheck.DeleteCheckMark == true)
+            {
+                flowLayoutPanelShoeAccounting.Controls.Clear();
+                getInfo(flowLayoutPanelShoeAccounting);
+                DeleteCheck.ChangeDeleteCheckMarkFalse();
+            }
+
+        }
         void getInfo(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();
@@ -93,9 +103,16 @@ namespace ShoeAccounting
 
         private void OpenDeleteWinButton_Click(object sender, EventArgs e)
         {
-            DeleteRecord win = new DeleteRecord();
-            win.Show();
-            this.Close();
+            if (NumberCheck.Number == null)
+            {
+                MessageBox.Show("Выберите запись щелкнув на нее");
+            }
+            else
+            {
+                DeleteRecord win = new DeleteRecord();
+                win.Show();
+                this.Close();
+            }
         }
 
         private void OpenUpdateWinButton_Click(object sender, EventArgs e)
