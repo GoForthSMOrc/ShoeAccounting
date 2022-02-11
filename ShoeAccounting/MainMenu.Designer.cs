@@ -41,6 +41,7 @@
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
             this.shoeField1 = new ShoeAccounting.ShoeField();
             this.labelForAdmin = new System.Windows.Forms.Label();
+            this.findBox = new System.Windows.Forms.TextBox();
             this.panelForMainMenu.SuspendLayout();
             this.panelWithButtons.SuspendLayout();
             this.flowLayoutPanelShoeAccounting.SuspendLayout();
@@ -198,12 +199,24 @@
             this.labelForAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseDown);
             this.labelForAdmin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseMove);
             // 
+            // findBox
+            // 
+            this.findBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.findBox.Location = new System.Drawing.Point(365, 68);
+            this.findBox.Name = "findBox";
+            this.findBox.Size = new System.Drawing.Size(345, 37);
+            this.findBox.TabIndex = 4;
+            this.findBox.Text = "Поиск по номеру";
+            this.findBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.findBox_MouseClick);
+            this.findBox.TextChanged += new System.EventHandler(this.findBox_TextChanged);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1349, 667);
+            this.Controls.Add(this.findBox);
             this.Controls.Add(this.labelForAdmin);
             this.Controls.Add(this.flowLayoutPanelShoeAccounting);
             this.Controls.Add(this.panelForMainMenu);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelShoeAccounting;
         private System.Windows.Forms.Label labelForAdmin;
         private ShoeField shoeField1;
+        private System.Windows.Forms.TextBox findBox;
     }
 }
