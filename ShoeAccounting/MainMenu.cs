@@ -262,5 +262,10 @@ namespace ShoeAccounting
             findBox.Clear();
             getInfo(flowLayoutPanelShoeAccounting);
         }
+
+        private void shoeField1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

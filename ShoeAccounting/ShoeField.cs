@@ -67,5 +67,23 @@ namespace ShoeAccounting
                 BackColor = Color.CornflowerBlue;
             }
         }
+
+        private void showCommsButton_Click(object sender, EventArgs e)
+        {
+            Comments win = new Comments();
+            win.Show();
+        }
+
+        private void userinfoButton_Click(object sender, EventArgs e)
+        {
+            User win = new User();
+            win.Show();
+        }
+
+        private void masterinfoButton_Click(object sender, EventArgs e)
+        {
+            Master win = new Master();
+            win.Show();
+        }
     }
 }

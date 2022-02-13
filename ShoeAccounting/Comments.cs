@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
-    public partial class DescriptionProblem : Form
+    public partial class Comments : Form
     {
-        public DescriptionProblem()
+        public Comments()
         {
             InitializeComponent();
             getInfo();
@@ -19,7 +19,7 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select ShoeAccounting.DescriptionOfTheProblem from ShoeAccounting where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Select ShoeAccounting.MasterComments from ShoeAccounting where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -28,11 +28,11 @@ namespace ShoeAccounting
             {
                 conn.Open();
                 rd = cmDB.ExecuteReader();
-                if(rd.HasRows)
+                if (rd.HasRows)
                 {
-                    while(rd.Read())
+                    while (rd.Read())
                     {
-                        string[] row = {rd.GetString(0)};
+                        string[] row = { rd.GetString(0) };
                         descrBox.Text = row[0];
                     }
                 }
@@ -61,7 +61,7 @@ namespace ShoeAccounting
         }
 
         Point lastPoint;
-        private void DescriptionProblem_MouseMove(object sender, MouseEventArgs e)
+        private void Comments_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -70,7 +70,7 @@ namespace ShoeAccounting
             }
         }
 
-        private void DescriptionProblem_MouseDown(object sender, MouseEventArgs e)
+        private void Comments_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
         }

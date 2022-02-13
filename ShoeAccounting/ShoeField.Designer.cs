@@ -67,6 +67,7 @@
             this.showCommsButton.TabIndex = 15;
             this.showCommsButton.Text = "Комментарии";
             this.showCommsButton.UseVisualStyleBackColor = false;
+            this.showCommsButton.Click += new System.EventHandler(this.showCommsButton_Click);
             // 
             // labelNum
             // 
@@ -112,6 +113,7 @@
             this.userinfoButton.TabIndex = 19;
             this.userinfoButton.Text = "Пользователь";
             this.userinfoButton.UseVisualStyleBackColor = false;
+            this.userinfoButton.Click += new System.EventHandler(this.userinfoButton_Click);
             // 
             // masterinfoButton
             // 
@@ -124,6 +126,7 @@
             this.masterinfoButton.TabIndex = 20;
             this.masterinfoButton.Text = "Мастер";
             this.masterinfoButton.UseVisualStyleBackColor = false;
+            this.masterinfoButton.Click += new System.EventHandler(this.masterinfoButton_Click);
             // 
             // labelStat
             // 

@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace ShoeAccounting
 {
-    public partial class DescriptionProblem : Form
+    public partial class Master : Form
     {
-        public DescriptionProblem()
+        public Master()
         {
             InitializeComponent();
             getInfo();
@@ -19,7 +19,7 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select ShoeAccounting.DescriptionOfTheProblem from ShoeAccounting where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Select Master.FirstName,Master.LastName,Master.Patronymic,Master.Phone,Master.Email from ShoeAccounting join Master on ShoeAccounting.id_Master = Master.Id_Master where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -28,13 +28,19 @@ namespace ShoeAccounting
             {
                 conn.Open();
                 rd = cmDB.ExecuteReader();
-                if(rd.HasRows)
+                if (rd.HasRows)
                 {
-                    while(rd.Read())
+                    while (rd.Read())
                     {
-                        string[] row = {rd.GetString(0)};
-                        descrBox.Text = row[0];
+                        string[] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4) };
+                        ForMaster.InsertIntoForMaster(row);
+                        fBox.Text = row[0];
+                        iBox.Text = row[1];
+                        oBox.Text = row[2];
+                        pBox.Text = row[3];
+                        mBox.Text = row[4];
                     }
+
                 }
                 conn.Close();
             }
@@ -58,35 +64,6 @@ namespace ShoeAccounting
         private void labelExit_MouseLeave(object sender, EventArgs e)
         {
             labelExit.ForeColor = Color.DarkMagenta;
-        }
-
-        Point lastPoint;
-        private void DescriptionProblem_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void DescriptionProblem_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
-        }
-
-        private void labelDescription_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
-            }
-        }
-
-        private void labelDescription_MouseDown(object sender, MouseEventArgs e)
-        {
-            lastPoint = new Point(e.X, e.Y);
         }
     }
 }

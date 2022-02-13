@@ -185,6 +185,7 @@
             this.shoeField1.Size = new System.Drawing.Size(950, 245);
             this.shoeField1.STATUSSHOE = null;
             this.shoeField1.TabIndex = 0;
+            this.shoeField1.Load += new System.EventHandler(this.shoeField1_Load);
             // 
             // labelForAdmin
             // 
