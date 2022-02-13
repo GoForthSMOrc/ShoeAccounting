@@ -52,6 +52,8 @@
             this.labelMail.Size = new System.Drawing.Size(76, 29);
             this.labelMail.TabIndex = 26;
             this.labelMail.Text = "Почта";
+            this.labelMail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelMail_MouseDown);
+            this.labelMail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelMail_MouseMove);
             // 
             // labelPhone
             // 
@@ -63,6 +65,8 @@
             this.labelPhone.Size = new System.Drawing.Size(103, 29);
             this.labelPhone.TabIndex = 25;
             this.labelPhone.Text = "Телефон";
+            this.labelPhone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelPhone_MouseDown);
+            this.labelPhone.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelPhone_MouseMove);
             // 
             // labelO
             // 
@@ -74,6 +78,8 @@
             this.labelO.Size = new System.Drawing.Size(112, 29);
             this.labelO.TabIndex = 24;
             this.labelO.Text = "Отчество";
+            this.labelO.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelO_MouseDown);
+            this.labelO.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelO_MouseMove);
             // 
             // labeli
             // 
@@ -85,6 +91,8 @@
             this.labeli.Size = new System.Drawing.Size(58, 29);
             this.labeli.TabIndex = 22;
             this.labeli.Text = "Имя";
+            this.labeli.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labeli_MouseDown);
+            this.labeli.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labeli_MouseMove);
             // 
             // labelF
             // 
@@ -96,6 +104,8 @@
             this.labelF.Size = new System.Drawing.Size(109, 29);
             this.labelF.TabIndex = 23;
             this.labelF.Text = "Фамилия";
+            this.labelF.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelF_MouseDown);
+            this.labelF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelF_MouseMove);
             // 
             // mBox
             // 
@@ -151,6 +161,8 @@
             this.labelDescription.Size = new System.Drawing.Size(93, 29);
             this.labelDescription.TabIndex = 17;
             this.labelDescription.Text = "Мастер";
+            this.labelDescription.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelDescription_MouseDown);
+            this.labelDescription.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelDescription_MouseMove);
             // 
             // fBox
             // 
@@ -198,6 +210,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Master";
             this.Text = "Master";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Master_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Master_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 
