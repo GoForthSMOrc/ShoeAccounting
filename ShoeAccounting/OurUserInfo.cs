@@ -6,6 +6,7 @@ namespace ShoeAccounting
 {
     internal class OurUserInfo
     {
+        public static string id_UsersDBInfo { get; private set; }
         public static string LName { get; private set; }
         public static string FName { get; private set; }
         public static string Patronymic { get; private set; }
@@ -20,6 +21,7 @@ namespace ShoeAccounting
             OurUserInfo.Phone = args[3];
             OurUserInfo.Email = args[4];
             OurUserInfo.StatusU = args[5];
+            OurUserInfo.id_UsersDBInfo = args[6];
         }
     }
 }

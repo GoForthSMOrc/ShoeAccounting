@@ -131,7 +131,7 @@ namespace ShoeAccounting
         private void enterButton_Click(object sender, EventArgs e)
         {
             int Count = 0;
-            String query = "Select UsersDB.LastName,UsersDB.FirstName,UsersDB.Patronymic,UsersDB.Phone,UsersDB.Email,StatusUsersDB.NameStatusUsersDB from UsersDB join StatusUsersDB on UsersDB.id_StatusUsersDB = StatusUsersDB.Id_StatusUsersDB where Login = '" + logBox.Text + "' and Password = '" + passBox.Text + "';";
+            String query = "Select UsersDB.LastName,UsersDB.FirstName,UsersDB.Patronymic,UsersDB.Phone,UsersDB.Email,StatusUsersDB.NameStatusUsersDB, UsersDB.Id_UsersDB from UsersDB join StatusUsersDB on UsersDB.id_StatusUsersDB = StatusUsersDB.Id_StatusUsersDB where Login = '" + logBox.Text + "' and Password = '" + passBox.Text + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -144,7 +144,7 @@ namespace ShoeAccounting
                 {
                     while(rd.Read())
                     {
-                        string [] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5) };
+                        string [] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5), rd.GetString(6) };
                         OurUserInfo.InsertIntoOurUserInfo(row);
                     }
                     Count = 1;
