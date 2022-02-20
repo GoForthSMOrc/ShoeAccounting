@@ -16,6 +16,7 @@ namespace ShoeAccounting
             OurShoeInfo.DateReg = args[1];
             OurShoeInfo.DateComp = args[2];
             OurShoeInfo.StatusShoe = args[3];
+
         }
 
     }

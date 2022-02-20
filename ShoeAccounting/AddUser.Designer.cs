@@ -73,6 +73,8 @@
             this.labelAddUser.Size = new System.Drawing.Size(292, 29);
             this.labelAddUser.TabIndex = 15;
             this.labelAddUser.Text = "Добавление пользователя";
+            this.labelAddUser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelAddUser_MouseDown);
+            this.labelAddUser.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelAddUser_MouseMove);
             // 
             // logBox
             // 
@@ -154,6 +156,8 @@
             this.labelLog.Size = new System.Drawing.Size(77, 29);
             this.labelLog.TabIndex = 24;
             this.labelLog.Text = "Логин";
+            this.labelLog.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelLog_MouseDown);
+            this.labelLog.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelLog_MouseMove);
             // 
             // labelPass
             // 
@@ -165,6 +169,8 @@
             this.labelPass.Size = new System.Drawing.Size(90, 29);
             this.labelPass.TabIndex = 25;
             this.labelPass.Text = "Пароль";
+            this.labelPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelPass_MouseDown);
+            this.labelPass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelPass_MouseMove);
             // 
             // labelLName
             // 
@@ -176,6 +182,8 @@
             this.labelLName.Size = new System.Drawing.Size(109, 29);
             this.labelLName.TabIndex = 26;
             this.labelLName.Text = "Фамилия";
+            this.labelLName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelLName_MouseDown);
+            this.labelLName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelLName_MouseMove);
             // 
             // labelFname
             // 
@@ -187,6 +195,8 @@
             this.labelFname.Size = new System.Drawing.Size(58, 29);
             this.labelFname.TabIndex = 27;
             this.labelFname.Text = "Имя";
+            this.labelFname.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelFname_MouseDown);
+            this.labelFname.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelFname_MouseMove);
             // 
             // labelPatron
             // 
@@ -198,6 +208,8 @@
             this.labelPatron.Size = new System.Drawing.Size(112, 29);
             this.labelPatron.TabIndex = 28;
             this.labelPatron.Text = "Отчество";
+            this.labelPatron.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelPatron_MouseDown);
+            this.labelPatron.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelPatron_MouseMove);
             // 
             // labelPhone
             // 
@@ -209,6 +221,8 @@
             this.labelPhone.Size = new System.Drawing.Size(103, 29);
             this.labelPhone.TabIndex = 29;
             this.labelPhone.Text = "Телефон";
+            this.labelPhone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelPhone_MouseDown);
+            this.labelPhone.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelPhone_MouseMove);
             // 
             // labelEmail
             // 
@@ -220,6 +234,8 @@
             this.labelEmail.Size = new System.Drawing.Size(76, 29);
             this.labelEmail.TabIndex = 30;
             this.labelEmail.Text = "Почта";
+            this.labelEmail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelEmail_MouseDown);
+            this.labelEmail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelEmail_MouseMove);
             // 
             // labelStatus
             // 
@@ -231,6 +247,8 @@
             this.labelStatus.Size = new System.Drawing.Size(83, 29);
             this.labelStatus.TabIndex = 31;
             this.labelStatus.Text = "Статус";
+            this.labelStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelStatus_MouseDown);
+            this.labelStatus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelStatus_MouseMove);
             // 
             // closeWinButton
             // 
@@ -275,6 +293,9 @@
             this.Name = "AddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddUser_MouseDown);
+            this.MouseHover += new System.EventHandler(this.AddUser_MouseHover);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddUser_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

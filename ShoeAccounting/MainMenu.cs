@@ -51,7 +51,7 @@ namespace ShoeAccounting
         void getInfo(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();
-            String query = "Select ShoeAccounting.Id_ShoeAccounting, ShoeAccounting.DateRegistration,ShoeAccounting.DateOfCompletion, StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe order by ShoeAccounting.Id_ShoeAccounting ASC";
+            String query = "Select ShoeAccounting.Id_ShoeAccounting, DATE_FORMAT(DateRegistration,'%m.%d.%Y' ),ShoeAccounting.DateOfCompletion, StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe order by ShoeAccounting.Id_ShoeAccounting ASC";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -262,37 +262,58 @@ namespace ShoeAccounting
 
         private void findBox_TextChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelShoeAccounting.Controls.Clear();
-            String query = "Select ShoeAccounting.Id_ShoeAccounting, ShoeAccounting.DateRegistration,ShoeAccounting.DateOfCompletion, StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe where Id_ShoeAccounting = '" + findBox.Text + "';";
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand cmDB = new MySqlCommand(query, conn);
-            MySqlDataReader rd;
-            cmDB.CommandTimeout = 60;
-            try
+            if (findBox.Text == String.Empty)
             {
-                conn.Open();
-                rd = cmDB.ExecuteReader();
-                if (rd.HasRows)
+                switch (OurUserInfo.StatusU)
                 {
-                    while (rd.Read())
-                    {
-                        string[] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3) };
-                        OurShoeInfo.InsertIntoOurShoeInfo(row);
-                        ShoeField shoeField = new ShoeField();
-                        shoeField.NUMBER = OurShoeInfo.Id;
-                        shoeField.DATEREGISTRATION = OurShoeInfo.DateReg;
-                        shoeField.DATECOMPLETION = OurShoeInfo.DateComp;
-                        shoeField.STATUSSHOE = OurShoeInfo.StatusShoe;
+                    case ("Администратор"):
+                        getInfo(flowLayoutPanelShoeAccounting);
+                        break;
 
-                        flowLayoutPanelShoeAccounting.Controls.Add(shoeField);
-                    }
+                    case ("Мастер"):
+                        getInfo(flowLayoutPanelShoeAccounting);
+                        break;
+                    /*case ("Клиент"):
+                        getInfoOnlyForUser(flowLayoutPanelShoeAccounting);
+                        break;
+                    */
                 }
-                conn.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ошибка вывода списка");
-                MessageBox.Show(ex.Message);
+                flowLayoutPanelShoeAccounting.Controls.Clear();
+                String query = "Select ShoeAccounting.Id_ShoeAccounting, ShoeAccounting.DateRegistration,ShoeAccounting.DateOfCompletion, StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe where Id_ShoeAccounting = '" + findBox.Text + "';";
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlCommand cmDB = new MySqlCommand(query, conn);
+                MySqlDataReader rd;
+                cmDB.CommandTimeout = 60;
+                try
+                {
+                    conn.Open();
+                    rd = cmDB.ExecuteReader();
+                    if (rd.HasRows)
+                    {
+                        while (rd.Read())
+                        {
+                            string[] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3) };
+                            OurShoeInfo.InsertIntoOurShoeInfo(row);
+                            ShoeField shoeField = new ShoeField();
+                            shoeField.NUMBER = OurShoeInfo.Id;
+                            shoeField.DATEREGISTRATION = OurShoeInfo.DateReg;
+                            shoeField.DATECOMPLETION = OurShoeInfo.DateComp;
+                            shoeField.STATUSSHOE = OurShoeInfo.StatusShoe;
+                            
+
+                            flowLayoutPanelShoeAccounting.Controls.Add(shoeField);
+                        }
+                    }
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка вывода списка");
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
