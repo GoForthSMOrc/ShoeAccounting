@@ -51,7 +51,7 @@ namespace ShoeAccounting
         void getInfo(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();
-            String query = "Select ShoeAccounting.Id_ShoeAccounting, DATE_FORMAT(DateRegistration,'%m.%d.%Y' ),DATE_FORMAT(DateOfCompletion,'%m.%d.%Y'), StatusShoe.NameStatusShoe from ShoeAccounting join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe order by ShoeAccounting.Id_ShoeAccounting ASC";
+            String query = "select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%m.%d.%y' ),date_format(dateofcompletion,'%m.%d.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe order by shoeaccounting.id_shoeaccounting asc";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;

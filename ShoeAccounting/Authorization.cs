@@ -131,7 +131,7 @@ namespace ShoeAccounting
         private void enterButton_Click(object sender, EventArgs e)
         {
             int Count = 0;
-            String query = "Select UsersDB.LastName,UsersDB.FirstName,UsersDB.Patronymic,UsersDB.Phone,UsersDB.Email,StatusUsersDB.NameStatusUsersDB, UsersDB.Id_UsersDB from UsersDB join StatusUsersDB on UsersDB.id_StatusUsersDB = StatusUsersDB.Id_StatusUsersDB where Login = '" + logBox.Text + "' and Password = '" + passBox.Text + "';";
+            String query = "Select usersdb.lastname,usersdb.firstname,usersdb.patronymic,usersdb.phone,usersdb.email,statususersdb.namestatususersdb, usersdb.id_usersdb from usersdb join statususersdb on usersdb.id_statususersdb = statususersdb.id_statususersdb where login = '" + logBox.Text + "' and password = '" + passBox.Text + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
