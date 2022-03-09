@@ -21,7 +21,7 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select date_format(dateregistration,'%m.%d.%y' ),shoeaccounting.descriptionoftheproblem,shoeaccounting.mastercomments,date_format(dateofcompletion,'%m.%d.%y'),shoeaccounting.id_usersdb,master.firstname,statusshoe.namestatusshoe from shoeaccounting join master on shoeaccounting.id_master = master.id_master join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + NumberCheck.Number + "';";
+            String query = "Select date_format(dateregistration,'%Y-%m-%d' ),shoeaccounting.descriptionoftheproblem,shoeaccounting.mastercomments,date_format(dateofcompletion,'%Y-%m-%d'),shoeaccounting.id_usersdb,master.firstname,statusshoe.namestatusshoe from shoeaccounting join master on shoeaccounting.id_master = master.id_master join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -40,7 +40,7 @@ namespace ShoeAccounting
                         mastercomBox.Text = row[2];
                         datecompBox.Text = row[3];
                         numuserBox.Text = row[4];
-                        masterBox.Text = row[5];
+                        //masterBox.Text = row[5];//
                         shoestatBox.Text = row[6];
                     }
                 }
