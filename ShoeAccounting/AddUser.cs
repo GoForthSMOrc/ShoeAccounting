@@ -26,7 +26,7 @@ namespace ShoeAccounting
 
         private void adduserButton_Click(object sender, EventArgs e)
         {
-            String query = "insert into UsersDB (Login,Password,LastName,FirstName,Patronymic,Phone,Email, id_StatusUsersDB) values ('" + logBox.Text +"','" + passBox.Text +"','" + lnameBox.Text +"','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";
+            String query = "Insert into usersdb (login,password,lastname,firstname,patronymic,phone,email, id_statususersdb) values ('" + logBox.Text +"','" + passBox.Text +"','" + lnameBox.Text +"','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;

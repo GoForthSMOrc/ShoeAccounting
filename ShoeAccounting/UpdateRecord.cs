@@ -17,11 +17,11 @@ namespace ShoeAccounting
             getInfo();
             
         }
-
+        
 
         void getInfo()
         {
-            String query = "Select ShoeAccounting.DateRegistration,ShoeAccounting.DescriptionOfTheProblem,ShoeAccounting.MasterComments,ShoeAccounting.DateOfCompletion,ShoeAccounting.id_UsersDB,Master.FirstName,StatusShoe.NameStatusShoe from ShoeAccounting join Master on ShoeAccounting.id_Master = Master.Id_Master join StatusShoe on ShoeAccounting.id_StatusShoe = StatusShoe.Id_StatusShoe where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Select date_format(dateregistration,'%m.%d.%y' ),shoeaccounting.descriptionoftheproblem,shoeaccounting.mastercomments,date_format(dateofcompletion,'%m.%d.%y'),shoeaccounting.id_usersdb,master.firstname,statusshoe.namestatusshoe from shoeaccounting join master on shoeaccounting.id_master = master.id_master join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -96,7 +96,7 @@ namespace ShoeAccounting
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            String query = "Update ShoeAccounting set DateRegistration = '" + dateregBox.Text + "',DescriptionOfTheProblem = '" + descprobBox.Text + "',MasterComments = '" + mastercomBox.Text + "',DateOfCompletion = '" + datecompBox.Text + "',id_UsersDB = '" + numuserBox.Text + "',id_Master = '" + MasterNumber.MasterNumbervalue + "',id_StatusShoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Update shoeaccounting set dateregistration = '" + dateregBox.Text + "',descriptionoftheproblem = '" + descprobBox.Text + "',mastercomments = '" + mastercomBox.Text + "',dateofcompletion = '" + datecompBox.Text + "',id_usersdb = '" + numuserBox.Text + "',id_master = '" + MasterNumber.MasterNumbervalue + "',id_statusshoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where id_shoeaccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;

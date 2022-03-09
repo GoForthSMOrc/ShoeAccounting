@@ -19,7 +19,7 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select Master.FirstName,Master.LastName,Master.Patronymic,Master.Phone,Master.Email from ShoeAccounting join Master on ShoeAccounting.id_Master = Master.Id_Master where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Select master.firstname,master.lastname,master.patronymic,master.phone,master.email from shoeaccounting join master on shoeaccounting.id_master = master.id_master where id_shoeaccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;

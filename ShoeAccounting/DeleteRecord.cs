@@ -55,7 +55,7 @@ namespace ShoeAccounting
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            String query = "Delete from ShoeAccounting where Id_ShoeAccounting = '" + NumberCheck.Number + "';";
+            String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
