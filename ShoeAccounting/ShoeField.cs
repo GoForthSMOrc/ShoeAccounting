@@ -14,8 +14,15 @@ namespace ShoeAccounting
         public ShoeField()
         {
             InitializeComponent();
+            switch (OurUserInfo.StatusU)
+            {
+                case ("Клиент"):
+                    showCommsButton.Visible = false;
+                    showproblemButton.Visible = false;
+                    userinfoButton.Visible = false;
+                    break;
+            }
         }
-
         private string _number;
 
         public string NUMBER

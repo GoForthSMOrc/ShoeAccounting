@@ -48,7 +48,7 @@
             this.showproblemButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.showproblemButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showproblemButton.ForeColor = System.Drawing.Color.White;
-            this.showproblemButton.Location = new System.Drawing.Point(641, 15);
+            this.showproblemButton.Location = new System.Drawing.Point(641, 109);
             this.showproblemButton.Name = "showproblemButton";
             this.showproblemButton.Size = new System.Drawing.Size(294, 41);
             this.showproblemButton.TabIndex = 14;
@@ -61,7 +61,7 @@
             this.showCommsButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.showCommsButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showCommsButton.ForeColor = System.Drawing.Color.White;
-            this.showCommsButton.Location = new System.Drawing.Point(641, 71);
+            this.showCommsButton.Location = new System.Drawing.Point(641, 156);
             this.showCommsButton.Name = "showCommsButton";
             this.showCommsButton.Size = new System.Drawing.Size(294, 41);
             this.showCommsButton.TabIndex = 15;
@@ -107,7 +107,7 @@
             this.userinfoButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.userinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userinfoButton.ForeColor = System.Drawing.Color.White;
-            this.userinfoButton.Location = new System.Drawing.Point(641, 128);
+            this.userinfoButton.Location = new System.Drawing.Point(641, 62);
             this.userinfoButton.Name = "userinfoButton";
             this.userinfoButton.Size = new System.Drawing.Size(294, 41);
             this.userinfoButton.TabIndex = 19;
@@ -120,7 +120,7 @@
             this.masterinfoButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.masterinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.masterinfoButton.ForeColor = System.Drawing.Color.White;
-            this.masterinfoButton.Location = new System.Drawing.Point(641, 187);
+            this.masterinfoButton.Location = new System.Drawing.Point(641, 15);
             this.masterinfoButton.Name = "masterinfoButton";
             this.masterinfoButton.Size = new System.Drawing.Size(294, 41);
             this.masterinfoButton.TabIndex = 20;
