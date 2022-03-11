@@ -26,22 +26,29 @@ namespace ShoeAccounting
 
         private void adduserButton_Click(object sender, EventArgs e)
         {
-            String query = "Insert into usersdb (login,password,lastname,firstname,patronymic,phone,email, id_statususersdb) values ('" + logBox.Text +"','" + passBox.Text +"','" + lnameBox.Text +"','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand cmDB = new MySqlCommand(query, conn);
-            MySqlDataReader rd;
-            cmDB.CommandTimeout = 60;
-            try
+            if (logBox.Text == String.Empty || passBox.Text == String.Empty || lnameBox.Text == String.Empty || fnameBox.Text == String.Empty || patronBox.Text == String.Empty || phoneBox.Text == String.Empty || emailBox.Text == String.Empty || statusBox.Text == String.Empty)
             {
-                conn.Open();
-                rd = cmDB.ExecuteReader();
-                MessageBox.Show("Запись успешно добавлена");
-                conn.Close();
+                MessageBox.Show("Для добавления пользователя все поля должны быть заполнены");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ошибка добавления пользователя");
-                MessageBox.Show(ex.Message);
+                String query = "Insert into usersdb (login,password,lastname,firstname,patronymic,phone,email, id_statususersdb) values ('" + logBox.Text + "','" + passBox.Text + "','" + lnameBox.Text + "','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlCommand cmDB = new MySqlCommand(query, conn);
+                MySqlDataReader rd;
+                cmDB.CommandTimeout = 60;
+                try
+                {
+                    conn.Open();
+                    rd = cmDB.ExecuteReader();
+                    MessageBox.Show("Запись успешно добавлена");
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка добавления пользователя");
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

@@ -50,7 +50,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.deleteButton.BackColor = System.Drawing.Color.MediumVioletRed;
             this.deleteButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.Location = new System.Drawing.Point(188, 121);
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.Purple;
             this.ClientSize = new System.Drawing.Size(653, 241);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.closeWinButton);

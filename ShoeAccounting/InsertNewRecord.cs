@@ -23,22 +23,29 @@ namespace ShoeAccounting
 
         private void insertButton_Click(object sender, EventArgs e)
         {
-            String query = "Insert into shoeaccounting (dateregistration,descriptionoftheproblem,mastercomments,dateofcompletion,id_usersdb,id_master,id_statusshoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "');";
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand cmDB = new MySqlCommand(query, conn);
-            MySqlDataReader rd;
-            cmDB.CommandTimeout = 60;
-            try
+            if (dateregBox.Text == String.Empty || datecompBox.Text == String.Empty || numuserBox.Text == String.Empty || masterBox.Text == String.Empty || shoestatBox.Text == String.Empty)
             {
-                conn.Open();
-                rd = cmDB.ExecuteReader();
-                MessageBox.Show("Запись успешно добавлена");
-                conn.Close();
+                MessageBox.Show("Все поля кроме(возможно после осмотра мастера или по заявлению пользователя) Описания проблемы и Заметок мастера должны быть заполнены");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ошибка ввода");
-                MessageBox.Show(ex.Message);
+                String query = "Insert into shoeaccounting (dateregistration,descriptionoftheproblem,mastercomments,dateofcompletion,id_usersdb,id_master,id_statusshoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "');";
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlCommand cmDB = new MySqlCommand(query, conn);
+                MySqlDataReader rd;
+                cmDB.CommandTimeout = 60;
+                try
+                {
+                    conn.Open();
+                    rd = cmDB.ExecuteReader();
+                    MessageBox.Show("Запись успешно добавлена");
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка ввода");
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

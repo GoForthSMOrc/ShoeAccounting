@@ -46,6 +46,7 @@
             this.masterBox = new System.Windows.Forms.ComboBox();
             this.labelMaster = new System.Windows.Forms.Label();
             this.shoestatBox = new System.Windows.Forms.ComboBox();
+            this.labelFormatInsertData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUpdateRec
@@ -233,12 +234,24 @@
             this.shoestatBox.TabIndex = 42;
             this.shoestatBox.SelectedIndexChanged += new System.EventHandler(this.shoestatBox_SelectedIndexChanged);
             // 
+            // labelFormatInsertData
+            // 
+            this.labelFormatInsertData.AutoSize = true;
+            this.labelFormatInsertData.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelFormatInsertData.ForeColor = System.Drawing.Color.White;
+            this.labelFormatInsertData.Location = new System.Drawing.Point(12, 38);
+            this.labelFormatInsertData.Name = "labelFormatInsertData";
+            this.labelFormatInsertData.Size = new System.Drawing.Size(475, 29);
+            this.labelFormatInsertData.TabIndex = 44;
+            this.labelFormatInsertData.Text = "*Формат даты для обновления -> 2022-03-25";
+            // 
             // UpdateRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1072, 698);
+            this.Controls.Add(this.labelFormatInsertData);
             this.Controls.Add(this.labelShoeStatus);
             this.Controls.Add(this.shoestatBox);
             this.Controls.Add(this.labelMaster);
@@ -288,5 +301,6 @@
         private System.Windows.Forms.ComboBox masterBox;
         private System.Windows.Forms.Label labelMaster;
         private System.Windows.Forms.ComboBox shoestatBox;
+        private System.Windows.Forms.Label labelFormatInsertData;
     }
 }

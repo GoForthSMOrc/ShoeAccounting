@@ -39,7 +39,7 @@
             // 
             // panelExitConfirmation
             // 
-            this.panelExitConfirmation.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelExitConfirmation.BackColor = System.Drawing.Color.DarkMagenta;
             this.panelExitConfirmation.Controls.Add(this.panelLine2);
             this.panelExitConfirmation.Controls.Add(this.labelExitConfirmation);
             this.panelExitConfirmation.Dock = System.Windows.Forms.DockStyle.Top;
@@ -64,7 +64,7 @@
             // labelExitConfirmation
             // 
             this.labelExitConfirmation.AutoSize = true;
-            this.labelExitConfirmation.BackColor = System.Drawing.Color.RoyalBlue;
+            this.labelExitConfirmation.BackColor = System.Drawing.Color.DarkMagenta;
             this.labelExitConfirmation.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelExitConfirmation.ForeColor = System.Drawing.SystemColors.Control;
             this.labelExitConfirmation.Location = new System.Drawing.Point(66, 26);
@@ -77,7 +77,7 @@
             // 
             // yesButton
             // 
-            this.yesButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.yesButton.BackColor = System.Drawing.Color.MediumVioletRed;
             this.yesButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.yesButton.ForeColor = System.Drawing.Color.White;
             this.yesButton.Location = new System.Drawing.Point(12, 93);
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.DarkMagenta;
             this.ClientSize = new System.Drawing.Size(393, 164);
             this.Controls.Add(this.notButton);
             this.Controls.Add(this.yesButton);

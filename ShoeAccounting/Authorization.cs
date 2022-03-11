@@ -130,43 +130,50 @@ namespace ShoeAccounting
         //Авторизация: клик кнопки войти//
         private void enterButton_Click(object sender, EventArgs e)
         {
-            int Count = 0;
-            String query = "Select usersdb.lastname,usersdb.firstname,usersdb.patronymic,usersdb.phone,usersdb.email,statususersdb.namestatususersdb, usersdb.id_usersdb from usersdb join statususersdb on usersdb.id_statususersdb = statususersdb.id_statususersdb where login = '" + logBox.Text + "' and password = '" + passBox.Text + "';";
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand cmDB = new MySqlCommand(query, conn);
-            MySqlDataReader rd;
-            cmDB.CommandTimeout = 60;
-            try
+            if (logBox.Text == String.Empty || passBox.Text == String.Empty)
             {
-                conn.Open();
-                rd = cmDB.ExecuteReader();
-                if(rd.HasRows)
+                MessageBox.Show("Поля должны быть заполнены");
+            }
+            else
+            {
+                int Count = 0;
+                String query = "Select usersdb.lastname,usersdb.firstname,usersdb.patronymic,usersdb.phone,usersdb.email,statususersdb.namestatususersdb, usersdb.id_usersdb from usersdb join statususersdb on usersdb.id_statususersdb = statususersdb.id_statususersdb where login = '" + logBox.Text + "' and password = '" + passBox.Text + "';";
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlCommand cmDB = new MySqlCommand(query, conn);
+                MySqlDataReader rd;
+                cmDB.CommandTimeout = 60;
+                try
                 {
-                    while(rd.Read())
+                    conn.Open();
+                    rd = cmDB.ExecuteReader();
+                    if (rd.HasRows)
                     {
-                        string [] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5), rd.GetString(6) };
-                        OurUserInfo.InsertIntoOurUserInfo(row);
+                        while (rd.Read())
+                        {
+                            string[] row = { rd.GetString(0), rd.GetString(1), rd.GetString(2), rd.GetString(3), rd.GetString(4), rd.GetString(5), rd.GetString(6) };
+                            OurUserInfo.InsertIntoOurUserInfo(row);
+                        }
+                        Count = 1;
                     }
-                    Count = 1;
+                    conn.Close();
                 }
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка");
-                MessageBox.Show(ex.Message);
-            }
-            
-            if (Count > 0)
-            {
-                MainMenu win = new MainMenu();
-                win.Show();
-                this.Hide();
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка");
+                    MessageBox.Show(ex.Message);
+                }
 
-            if (Count == 0)
-            {
-                MessageBox.Show("Ошибка");
+                if (Count > 0)
+                {
+                    MainMenu win = new MainMenu();
+                    win.Show();
+                    this.Hide();
+                }
+
+                if (Count == 0)
+                {
+                    MessageBox.Show("Ошибка");
+                }
             }
         }
     }

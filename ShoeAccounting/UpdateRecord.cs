@@ -96,22 +96,29 @@ namespace ShoeAccounting
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            String query = "Update shoeaccounting set dateregistration = '" + dateregBox.Text + "',descriptionoftheproblem = '" + descprobBox.Text + "',mastercomments = '" + mastercomBox.Text + "',dateofcompletion = '" + datecompBox.Text + "',id_usersdb = '" + numuserBox.Text + "',id_master = '" + MasterNumber.MasterNumbervalue + "',id_statusshoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where id_shoeaccounting = '" + NumberCheck.Number + "';";
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand cmDB = new MySqlCommand(query, conn);
-            MySqlDataReader rd;
-            cmDB.CommandTimeout = 60;
-            try
+            if (dateregBox.Text == String.Empty || datecompBox.Text == String.Empty || numuserBox.Text == String.Empty || masterBox.Text == String.Empty || shoestatBox.Text == String.Empty)
             {
-                conn.Open();
-                rd = cmDB.ExecuteReader();
-                MessageBox.Show("Запись успешно обновлена");
-                conn.Close();
+                MessageBox.Show("Все поля кроме(возможно после осмотра мастера или по заявлению пользователя) Описания проблемы и Заметок мастера должны быть заполнены");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ошибка обновления записи");
-                MessageBox.Show(ex.Message);
+                String query = "Update shoeaccounting set dateregistration = '" + dateregBox.Text + "',descriptionoftheproblem = '" + descprobBox.Text + "',mastercomments = '" + mastercomBox.Text + "',dateofcompletion = '" + datecompBox.Text + "',id_usersdb = '" + numuserBox.Text + "',id_master = '" + MasterNumber.MasterNumbervalue + "',id_statusshoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where id_shoeaccounting = '" + NumberCheck.Number + "';";
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlCommand cmDB = new MySqlCommand(query, conn);
+                MySqlDataReader rd;
+                cmDB.CommandTimeout = 60;
+                try
+                {
+                    conn.Open();
+                    rd = cmDB.ExecuteReader();
+                    MessageBox.Show("Запись успешно обновлена");
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка обновления записи");
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
