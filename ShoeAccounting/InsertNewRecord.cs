@@ -29,7 +29,8 @@ namespace ShoeAccounting
             }
             else
             {
-                String query = "Insert into shoeaccounting (dateregistration,descriptionoftheproblem,mastercomments,dateofcompletion,id_usersdb,id_master,id_statusshoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "');";
+                //String query = "Insert into shoeaccounting (dateregistration,descriptionoftheproblem,mastercomments,dateofcompletion,id_usersdb,id_master,id_statusshoe) values ('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "');";//
+                String query = "call sp_InsertIntoShoeAccounting('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "', '" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "')";
                 MySqlConnection conn = DBUtils.GetDBConnection();
                 MySqlCommand cmDB = new MySqlCommand(query, conn);
                 MySqlDataReader rd;

@@ -21,7 +21,8 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select date_format(dateregistration,'%Y-%m-%d' ),shoeaccounting.descriptionoftheproblem,shoeaccounting.mastercomments,date_format(dateofcompletion,'%Y-%m-%d'),shoeaccounting.id_usersdb,master.firstname,statusshoe.namestatusshoe from shoeaccounting join master on shoeaccounting.id_master = master.id_master join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + NumberCheck.Number + "';";
+            //String query = "Select date_format(dateregistration,'%Y-%m-%d' ),shoeaccounting.descriptionoftheproblem,shoeaccounting.mastercomments,date_format(dateofcompletion,'%Y-%m-%d'),shoeaccounting.id_usersdb,master.firstname,statusshoe.namestatusshoe from shoeaccounting join master on shoeaccounting.id_master = master.id_master join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + NumberCheck.Number + "';";//
+            String query = "call sp_getInfoForUpdateWin('" + NumberCheck.Number + "')";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -41,6 +42,15 @@ namespace ShoeAccounting
                         datecompBox.Text = row[3];
                         numuserBox.Text = row[4];
                         //masterBox.Text = row[5];//
+                        switch (row[5])
+                        {
+                            case ("Горцев"):
+                                masterBox.Text = "Горцев И.И";
+                                break;
+                            case ("Голубев"):
+                                masterBox.Text = "Голубев В.И";
+                                break;
+                        }
                         shoestatBox.Text = row[6];
                     }
                 }
@@ -102,7 +112,8 @@ namespace ShoeAccounting
             }
             else
             {
-                String query = "Update shoeaccounting set dateregistration = '" + dateregBox.Text + "',descriptionoftheproblem = '" + descprobBox.Text + "',mastercomments = '" + mastercomBox.Text + "',dateofcompletion = '" + datecompBox.Text + "',id_usersdb = '" + numuserBox.Text + "',id_master = '" + MasterNumber.MasterNumbervalue + "',id_statusshoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where id_shoeaccounting = '" + NumberCheck.Number + "';";
+                //String query = "Update shoeaccounting set dateregistration = '" + dateregBox.Text + "',descriptionoftheproblem = '" + descprobBox.Text + "',mastercomments = '" + mastercomBox.Text + "',dateofcompletion = '" + datecompBox.Text + "',id_usersdb = '" + numuserBox.Text + "',id_master = '" + MasterNumber.MasterNumbervalue + "',id_statusshoe = '" + ShoeStatusNumber.ShoeStatusNumbervalue + "' where id_shoeaccounting = '" + NumberCheck.Number + "';";//
+                String query = "call sp_UpdateRecord('" + dateregBox.Text + "','" + descprobBox.Text + "','" + mastercomBox.Text + "','" + datecompBox.Text + "','" + numuserBox.Text + "','" + MasterNumber.MasterNumbervalue + "','" + ShoeStatusNumber.ShoeStatusNumbervalue + "','" + NumberCheck.Number + "')";
                 MySqlConnection conn = DBUtils.GetDBConnection();
                 MySqlCommand cmDB = new MySqlCommand(query, conn);
                 MySqlDataReader rd;

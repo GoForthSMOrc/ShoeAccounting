@@ -14,6 +14,7 @@ namespace ShoeAccounting
         public ShoeField()
         {
             InitializeComponent();
+            
             switch (OurUserInfo.StatusU)
             {
                 case ("Клиент"):
@@ -23,6 +24,7 @@ namespace ShoeAccounting
                     break;
             }
         }
+        
         private string _number;
 
         public string NUMBER
@@ -57,40 +59,103 @@ namespace ShoeAccounting
 
         private void showproblemButton_Click(object sender, EventArgs e)
         {
-            DescriptionProblem win = new DescriptionProblem();
-            win.Show();
+            if (NumberCheck.Number == null)
+            {
+                MessageBox.Show("Вы должны кликнуть на соответствующую запись, чтобы выбрать ее!");
+            }
+            else
+            {
+                DescriptionProblem win = new DescriptionProblem();
+                win.Show();
+            }
            
         }
 
         private void ShoeField_Click(object sender, EventArgs e)
         {
-            if (BackColor == Color.CornflowerBlue)
+          if (BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == false)
+          {
+            NumberCheck.InsertIntoNumber(NUMBER);
+            BackColor = Color.Navy;
+            CheckUsingElement.InsertIntoCheckUsingElement(true);
+          }
+          else
+          {
+            if(BackColor == Color.Navy && CheckUsingElement.CheckUsing == true)
             {
-                NumberCheck.InsertIntoNumber(NUMBER);
-                BackColor = Color.Navy;
+               BackColor = Color.CornflowerBlue;
+               CheckUsingElement.InsertIntoCheckUsingElement(false);
+               NumberCheck.InsertIntoNumber(null);
+            }
+            else
+            { 
+               if(BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == true)
+               {
+                  MessageBox.Show("Чтобы работать с другой записью необходимо убрать выделение с прошлой!");
+               }
+            }
+           
+          }
+           
+           
+        }
+
+        void getColor()
+        {
+            BackColor = Color.CornflowerBlue;
+        }
+        
+        private void showCommsButton_Click(object sender, EventArgs e)
+        {
+            if(NumberCheck.Number == null)
+            {
+                MessageBox.Show("Вы должны кликнуть на соответствующую запись, чтобы выбрать ее!");
             }
             else
             {
-                BackColor = Color.CornflowerBlue;
+                Comments win = new Comments();
+                win.Show();
             }
-        }
-
-        private void showCommsButton_Click(object sender, EventArgs e)
-        {
-            Comments win = new Comments();
-            win.Show();
+            
         }
 
         private void userinfoButton_Click(object sender, EventArgs e)
         {
-            User win = new User();
-            win.Show();
+            if (NumberCheck.Number == null)
+            {
+                MessageBox.Show("Вы должны кликнуть на соответствующую запись, чтобы выбрать ее!");
+            }
+            else
+            {
+                User win = new User();
+                win.Show();
+            }
         }
 
         private void masterinfoButton_Click(object sender, EventArgs e)
         {
-            Master win = new Master();
-            win.Show();
+            if (NumberCheck.Number == null)
+            {
+                MessageBox.Show("Вы должны кликнуть на соответствующую запись, чтобы выбрать ее!");
+            }
+            else
+            {
+                Master win = new Master();
+                win.Show();
+            }
+        }
+
+        private void ShoeField_MouseEnter(object sender, EventArgs e)
+        {
+            if(BackColor == Color.CornflowerBlue)
+            {
+               NumberCheck.InsertIntoNumber(null);
+            }
+            else
+            {
+                NumberCheck.InsertIntoNumber(NUMBER);
+            }
+            
         }
     }
 }

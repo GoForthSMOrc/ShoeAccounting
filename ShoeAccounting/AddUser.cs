@@ -32,7 +32,8 @@ namespace ShoeAccounting
             }
             else
             {
-                String query = "Insert into usersdb (login,password,lastname,firstname,patronymic,phone,email, id_statususersdb) values ('" + logBox.Text + "','" + passBox.Text + "','" + lnameBox.Text + "','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";
+                //String query = "Insert into usersdb (login,password,lastname,firstname,patronymic,phone,email, id_statususersdb) values ('" + logBox.Text + "','" + passBox.Text + "','" + lnameBox.Text + "','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "');";//
+                String query = "call sp_InsertIntoUsersDB('" + logBox.Text + "','" + passBox.Text + "','" + lnameBox.Text + "','" + fnameBox.Text + "','" + patronBox.Text + "','" + phoneBox.Text + "','" + emailBox.Text + "','" + StatusUsersDB.StatusUsersDBvalue + "')";
                 MySqlConnection conn = DBUtils.GetDBConnection();
                 MySqlCommand cmDB = new MySqlCommand(query, conn);
                 MySqlDataReader rd;

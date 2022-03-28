@@ -55,7 +55,8 @@ namespace ShoeAccounting
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";
+            //String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";//
+            String query = "call sp_DeleteRecord('" + NumberCheck.Number + "')";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -67,6 +68,9 @@ namespace ShoeAccounting
                 MessageBox.Show("Запись удалена");
                 DeleteCheck.ChangeDeleteCheckMarkTrue();
                 NumberCheck.InsertIntoNumber(null);
+                this.Close();
+                MainMenu win = new MainMenu();
+                win.Show();
                 conn.Close();
             }
             catch (Exception ex)

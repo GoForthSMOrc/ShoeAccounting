@@ -19,7 +19,8 @@ namespace ShoeAccounting
 
         void getInfo()
         {
-            String query = "Select shoeaccounting.mastercomments from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";
+            //String query = "Select shoeaccounting.mastercomments from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";//
+            String query = "call sp_getInfoForCommentsWin('" + NumberCheck.Number + "')";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;

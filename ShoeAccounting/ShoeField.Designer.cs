@@ -212,6 +212,7 @@
             this.Name = "ShoeField";
             this.Size = new System.Drawing.Size(945, 245);
             this.Click += new System.EventHandler(this.ShoeField_Click);
+            this.MouseEnter += new System.EventHandler(this.ShoeField_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

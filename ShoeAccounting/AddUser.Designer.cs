@@ -48,6 +48,7 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.closeWinButton = new System.Windows.Forms.Button();
+            this.LabelHelpPhone = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // adduserButton
@@ -55,7 +56,7 @@
             this.adduserButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.adduserButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.adduserButton.ForeColor = System.Drawing.Color.White;
-            this.adduserButton.Location = new System.Drawing.Point(144, 438);
+            this.adduserButton.Location = new System.Drawing.Point(146, 472);
             this.adduserButton.Name = "adduserButton";
             this.adduserButton.Size = new System.Drawing.Size(294, 41);
             this.adduserButton.TabIndex = 14;
@@ -127,7 +128,7 @@
             // emailBox
             // 
             this.emailBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.emailBox.Location = new System.Drawing.Point(144, 310);
+            this.emailBox.Location = new System.Drawing.Point(144, 352);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(421, 37);
             this.emailBox.TabIndex = 22;
@@ -140,7 +141,7 @@
             "Администратор",
             "Мастер",
             "Клиент"});
-            this.statusBox.Location = new System.Drawing.Point(144, 353);
+            this.statusBox.Location = new System.Drawing.Point(144, 395);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(421, 37);
             this.statusBox.TabIndex = 23;
@@ -229,7 +230,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(12, 318);
+            this.labelEmail.Location = new System.Drawing.Point(12, 360);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(76, 29);
             this.labelEmail.TabIndex = 30;
@@ -242,7 +243,7 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelStatus.ForeColor = System.Drawing.Color.White;
-            this.labelStatus.Location = new System.Drawing.Point(12, 361);
+            this.labelStatus.Location = new System.Drawing.Point(12, 403);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(83, 29);
             this.labelStatus.TabIndex = 31;
@@ -255,7 +256,7 @@
             this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.closeWinButton.ForeColor = System.Drawing.Color.White;
-            this.closeWinButton.Location = new System.Drawing.Point(144, 485);
+            this.closeWinButton.Location = new System.Drawing.Point(144, 519);
             this.closeWinButton.Name = "closeWinButton";
             this.closeWinButton.Size = new System.Drawing.Size(294, 41);
             this.closeWinButton.TabIndex = 32;
@@ -263,12 +264,24 @@
             this.closeWinButton.UseVisualStyleBackColor = false;
             this.closeWinButton.Click += new System.EventHandler(this.closeWinButton_Click);
             // 
+            // LabelHelpPhone
+            // 
+            this.LabelHelpPhone.AutoSize = true;
+            this.LabelHelpPhone.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LabelHelpPhone.ForeColor = System.Drawing.Color.White;
+            this.LabelHelpPhone.Location = new System.Drawing.Point(12, 304);
+            this.LabelHelpPhone.Name = "LabelHelpPhone";
+            this.LabelHelpPhone.Size = new System.Drawing.Size(428, 29);
+            this.LabelHelpPhone.TabIndex = 33;
+            this.LabelHelpPhone.Text = "*Формат ввода телефона -> 89831112233";
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(583, 543);
+            this.ClientSize = new System.Drawing.Size(583, 577);
+            this.Controls.Add(this.LabelHelpPhone);
             this.Controls.Add(this.closeWinButton);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelEmail);
@@ -322,5 +335,6 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button closeWinButton;
+        private System.Windows.Forms.Label LabelHelpPhone;
     }
 }

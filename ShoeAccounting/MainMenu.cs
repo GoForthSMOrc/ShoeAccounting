@@ -51,7 +51,8 @@ namespace ShoeAccounting
         void getInfo(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();
-            String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe order by shoeaccounting.id_shoeaccounting asc";
+            //String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe order by shoeaccounting.id_shoeaccounting asc";//
+            String query = "call sp_getInfo()";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -87,7 +88,8 @@ namespace ShoeAccounting
         void getInfoOnlyForUser(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();
-            String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_usersdb = '" + OurUserInfo.id_UsersDBInfo + "' order by shoeaccounting.id_shoeaccounting asc;";
+            //String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_usersdb = '" + OurUserInfo.id_UsersDBInfo + "' order by shoeaccounting.id_shoeaccounting asc;";//
+            String query = "call sp_getInfoOnlyForUser('" + OurUserInfo.id_UsersDBInfo + "');";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
             MySqlDataReader rd;
@@ -282,7 +284,8 @@ namespace ShoeAccounting
             else
             {
                 flowLayoutPanelShoeAccounting.Controls.Clear();
-                String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + findBox.Text + "';";
+                //String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + findBox.Text + "';";//
+                String query = "call sp_FindByNumber('" + findBox.Text + "');";
                 MySqlConnection conn = DBUtils.GetDBConnection();
                 MySqlCommand cmDB = new MySqlCommand(query, conn);
                 MySqlDataReader rd;

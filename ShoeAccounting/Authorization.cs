@@ -137,7 +137,8 @@ namespace ShoeAccounting
             else
             {
                 int Count = 0;
-                String query = "Select usersdb.lastname,usersdb.firstname,usersdb.patronymic,usersdb.phone,usersdb.email,statususersdb.namestatususersdb, usersdb.id_usersdb from usersdb join statususersdb on usersdb.id_statususersdb = statususersdb.id_statususersdb where login = '" + logBox.Text + "' and password = '" + passBox.Text + "';";
+                //String query = "Select usersdb.lastname,usersdb.firstname,usersdb.patronymic,usersdb.phone,usersdb.email,statususersdb.namestatususersdb, usersdb.id_usersdb from usersdb join statususersdb on usersdb.id_statususersdb = statususersdb.id_statususersdb where login = '" + logBox.Text + "' and password = '" + passBox.Text + "';";//
+                String query = "call sp_Authorization('" + logBox.Text + "','" + passBox.Text + "');";
                 MySqlConnection conn = DBUtils.GetDBConnection();
                 MySqlCommand cmDB = new MySqlCommand(query, conn);
                 MySqlDataReader rd;
@@ -172,7 +173,7 @@ namespace ShoeAccounting
 
                 if (Count == 0)
                 {
-                    MessageBox.Show("Ошибка");
+                    MessageBox.Show("Ошибка подключения к серверу");
                 }
             }
         }
