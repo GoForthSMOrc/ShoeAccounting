@@ -15,7 +15,6 @@ namespace ShoeAccounting
         {
             InitializeComponent();
             getNameUser();
-            //getInfo(flowLayoutPanelShoeAccounting);//
             switch (OurUserInfo.StatusU)
             {
                 case ("Администратор"):
@@ -40,7 +39,7 @@ namespace ShoeAccounting
             }
         }
 
-        public void DeleteCheckInfo()
+        /*public void DeleteCheckInfo()
         {
             if(DeleteCheck.DeleteCheckMark == true)
             {
@@ -70,7 +69,7 @@ namespace ShoeAccounting
                 DeleteCheck.ChangeDeleteCheckMarkFalse();
             }
 
-        }
+        }*/
         void getInfo(FlowLayoutPanel panel)
         {
             flowLayoutPanelShoeAccounting.Controls.Clear();

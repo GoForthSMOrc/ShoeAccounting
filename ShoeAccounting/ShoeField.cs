@@ -102,10 +102,10 @@ namespace ShoeAccounting
            
         }
 
-        void getColor()
+        /*void getColor()
         {
             BackColor = Color.CornflowerBlue;
-        }
+        }*/
         
         private void showCommsButton_Click(object sender, EventArgs e)
         {
