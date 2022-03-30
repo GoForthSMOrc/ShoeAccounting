@@ -48,14 +48,18 @@ namespace ShoeAccounting
 
         private void closeWinButton_Click(object sender, EventArgs e)
         {
-            MainMenu win = new MainMenu();
-            win.Show();
             this.Close();
+            NumberCheck.InsertIntoNumber(null);
+            ControlNUMBER.InsertIntoControlNUMBER(null);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
             //String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";//
+            if(NumberCheck.Number == null)
+            {
+                NumberCheck.InsertIntoNumber(ControlNUMBER.CheckNum);
+            }
             String query = "call sp_DeleteRecord('" + NumberCheck.Number + "')";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);
@@ -68,9 +72,8 @@ namespace ShoeAccounting
                 MessageBox.Show("Запись удалена");
                 DeleteCheck.ChangeDeleteCheckMarkTrue();
                 NumberCheck.InsertIntoNumber(null);
+                
                 this.Close();
-                MainMenu win = new MainMenu();
-                win.Show();
                 conn.Close();
             }
             catch (Exception ex)

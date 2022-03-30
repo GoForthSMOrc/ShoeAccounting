@@ -38,6 +38,7 @@
             this.OpenDeleteWinButton = new System.Windows.Forms.Button();
             this.OpenInsertWinButton = new System.Windows.Forms.Button();
             this.labelMainMenu = new System.Windows.Forms.Label();
+            this.RefreshListButton = new System.Windows.Forms.Button();
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
             this.shoeField1 = new ShoeAccounting.ShoeField();
             this.labelForAdmin = new System.Windows.Forms.Label();
@@ -71,10 +72,12 @@
             this.panelForMainMenu.Size = new System.Drawing.Size(359, 667);
             this.panelForMainMenu.TabIndex = 1;
             this.panelForMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelForMainMenu_MouseDown);
+            this.panelForMainMenu.MouseEnter += new System.EventHandler(this.panelForMainMenu_MouseEnter);
             this.panelForMainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelForMainMenu_MouseMove);
             // 
             // panelWithButtons
             // 
+            this.panelWithButtons.Controls.Add(this.RefreshListButton);
             this.panelWithButtons.Controls.Add(this.ExitButton);
             this.panelWithButtons.Controls.Add(this.OpenNewUserWinButton);
             this.panelWithButtons.Controls.Add(this.OpenUpdateWinButton);
@@ -105,7 +108,7 @@
             this.OpenNewUserWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.OpenNewUserWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenNewUserWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenNewUserWinButton.Location = new System.Drawing.Point(0, 141);
+            this.OpenNewUserWinButton.Location = new System.Drawing.Point(0, 188);
             this.OpenNewUserWinButton.Name = "OpenNewUserWinButton";
             this.OpenNewUserWinButton.Size = new System.Drawing.Size(331, 41);
             this.OpenNewUserWinButton.TabIndex = 10;
@@ -118,7 +121,7 @@
             this.OpenUpdateWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.OpenUpdateWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenUpdateWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenUpdateWinButton.Location = new System.Drawing.Point(0, 94);
+            this.OpenUpdateWinButton.Location = new System.Drawing.Point(0, 141);
             this.OpenUpdateWinButton.Name = "OpenUpdateWinButton";
             this.OpenUpdateWinButton.Size = new System.Drawing.Size(331, 41);
             this.OpenUpdateWinButton.TabIndex = 9;
@@ -131,7 +134,7 @@
             this.OpenDeleteWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.OpenDeleteWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenDeleteWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenDeleteWinButton.Location = new System.Drawing.Point(0, 47);
+            this.OpenDeleteWinButton.Location = new System.Drawing.Point(0, 94);
             this.OpenDeleteWinButton.Name = "OpenDeleteWinButton";
             this.OpenDeleteWinButton.Size = new System.Drawing.Size(331, 41);
             this.OpenDeleteWinButton.TabIndex = 8;
@@ -144,7 +147,7 @@
             this.OpenInsertWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.OpenInsertWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenInsertWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenInsertWinButton.Location = new System.Drawing.Point(0, 0);
+            this.OpenInsertWinButton.Location = new System.Drawing.Point(0, 47);
             this.OpenInsertWinButton.Name = "OpenInsertWinButton";
             this.OpenInsertWinButton.Size = new System.Drawing.Size(331, 41);
             this.OpenInsertWinButton.TabIndex = 7;
@@ -164,6 +167,19 @@
             this.labelMainMenu.Text = "Главное меню";
             this.labelMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseDown);
             this.labelMainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseMove);
+            // 
+            // RefreshListButton
+            // 
+            this.RefreshListButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.RefreshListButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RefreshListButton.ForeColor = System.Drawing.Color.White;
+            this.RefreshListButton.Location = new System.Drawing.Point(0, 0);
+            this.RefreshListButton.Name = "RefreshListButton";
+            this.RefreshListButton.Size = new System.Drawing.Size(334, 41);
+            this.RefreshListButton.TabIndex = 12;
+            this.RefreshListButton.Text = "Обновить список";
+            this.RefreshListButton.UseVisualStyleBackColor = false;
+            this.RefreshListButton.Click += new System.EventHandler(this.RefreshListButton_Click);
             // 
             // flowLayoutPanelShoeAccounting
             // 
@@ -253,5 +269,6 @@
         private System.Windows.Forms.Label labelForAdmin;
         private ShoeField shoeField1;
         private System.Windows.Forms.TextBox findBox;
+        private System.Windows.Forms.Button RefreshListButton;
     }
 }

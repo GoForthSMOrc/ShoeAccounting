@@ -76,6 +76,7 @@ namespace ShoeAccounting
           if (BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == false)
           {
             NumberCheck.InsertIntoNumber(NUMBER);
+            ControlNUMBER.InsertIntoControlNUMBER(NUMBER);
             BackColor = Color.Navy;
             CheckUsingElement.InsertIntoCheckUsingElement(true);
           }
@@ -86,7 +87,8 @@ namespace ShoeAccounting
                BackColor = Color.CornflowerBlue;
                CheckUsingElement.InsertIntoCheckUsingElement(false);
                NumberCheck.InsertIntoNumber(null);
-            }
+               ControlNUMBER.InsertIntoControlNUMBER(null);
+                }
             else
             { 
                if(BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == true)

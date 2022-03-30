@@ -19,8 +19,6 @@ namespace ShoeAccounting
 
         private void closeWinButton_Click(object sender, EventArgs e)
         {
-            MainMenu win = new MainMenu();
-            win.Show();
             this.Close();
         }
 

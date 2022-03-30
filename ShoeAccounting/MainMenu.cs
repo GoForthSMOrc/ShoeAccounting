@@ -15,16 +15,18 @@ namespace ShoeAccounting
         {
             InitializeComponent();
             getNameUser();
-            getInfo(flowLayoutPanelShoeAccounting);
+            //getInfo(flowLayoutPanelShoeAccounting);//
             switch (OurUserInfo.StatusU)
             {
                 case ("Администратор"):
                     labelForAdmin.Visible = true;
+                    getInfo(flowLayoutPanelShoeAccounting);
                     break;
 
                 case ("Мастер"):
                     OpenNewUserWinButton.Visible = false;
                     labelForAdmin.Visible = false;
+                    getInfo(flowLayoutPanelShoeAccounting);
                     break;
                 case ("Клиент"):
                     OpenNewUserWinButton.Visible = false;
@@ -38,12 +40,33 @@ namespace ShoeAccounting
             }
         }
 
-        void DeleteCheckInfo()
+        public void DeleteCheckInfo()
         {
             if(DeleteCheck.DeleteCheckMark == true)
             {
                 flowLayoutPanelShoeAccounting.Controls.Clear();
-                getInfo(flowLayoutPanelShoeAccounting);
+                switch (OurUserInfo.StatusU)
+                {
+                    case ("Администратор"):
+                        labelForAdmin.Visible = true;
+                        getInfo(flowLayoutPanelShoeAccounting);
+                        break;
+
+                    case ("Мастер"):
+                        OpenNewUserWinButton.Visible = false;
+                        labelForAdmin.Visible = false;
+                        getInfo(flowLayoutPanelShoeAccounting);
+                        break;
+                    case ("Клиент"):
+                        OpenNewUserWinButton.Visible = false;
+                        labelForAdmin.Visible = false;
+                        OpenInsertWinButton.Visible = false;
+                        OpenDeleteWinButton.Visible = false;
+                        OpenUpdateWinButton.Visible = false;
+                        findBox.Visible = false;
+                        getInfoOnlyForUser(flowLayoutPanelShoeAccounting);
+                        break;
+                }
                 DeleteCheck.ChangeDeleteCheckMarkFalse();
             }
 
@@ -139,7 +162,6 @@ namespace ShoeAccounting
         {
             InsertNewRecord win = new InsertNewRecord();
             win.Show();
-            this.Close();
         }
 
         private void OpenDeleteWinButton_Click(object sender, EventArgs e)
@@ -152,22 +174,26 @@ namespace ShoeAccounting
             {
                 DeleteRecord win = new DeleteRecord();
                 win.Show();
-                this.Close();
             }
         }
 
         private void OpenUpdateWinButton_Click(object sender, EventArgs e)
         {
-            UpdateRecord win = new UpdateRecord();
-            win.Show();
-            this.Close();
+            if (NumberCheck.Number == null)
+            {
+                MessageBox.Show("Выберите запись щелкнув на нее");
+            }
+            else
+            {
+                UpdateRecord win = new UpdateRecord();
+                win.Show();
+            }
         }
 
         private void OpenNewUserWinButton_Click(object sender, EventArgs e)
         {
             AddUser win = new AddUser();
             win.Show();
-            this.Close();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -329,6 +355,41 @@ namespace ShoeAccounting
         private void shoeField1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelForMainMenu_MouseEnter(object sender, EventArgs e)
+        {
+            NumberCheck.InsertIntoNumber(ControlNUMBER.CheckNum);
+        }
+
+        private void RefreshListButton_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelShoeAccounting.Controls.Clear();
+            switch (OurUserInfo.StatusU)
+            {
+                case ("Администратор"):
+                    labelForAdmin.Visible = true;
+                    getInfo(flowLayoutPanelShoeAccounting);
+                    CheckUsingElement.InsertIntoCheckUsingElement(false);
+                    break;
+
+                case ("Мастер"):
+                    OpenNewUserWinButton.Visible = false;
+                    labelForAdmin.Visible = false;
+                    getInfo(flowLayoutPanelShoeAccounting);
+                    CheckUsingElement.InsertIntoCheckUsingElement(false);
+                    break;
+                case ("Клиент"):
+                    OpenNewUserWinButton.Visible = false;
+                    labelForAdmin.Visible = false;
+                    OpenInsertWinButton.Visible = false;
+                    OpenDeleteWinButton.Visible = false;
+                    OpenUpdateWinButton.Visible = false;
+                    findBox.Visible = false;
+                    getInfoOnlyForUser(flowLayoutPanelShoeAccounting);
+                    CheckUsingElement.InsertIntoCheckUsingElement(false);
+                    break;
+            }
         }
     }
 }
