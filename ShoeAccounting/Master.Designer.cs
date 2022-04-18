@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Master));
             this.labelMail = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelO = new System.Windows.Forms.Label();
@@ -208,6 +209,7 @@
             this.Controls.Add(this.fBox);
             this.Controls.Add(this.labelExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Master";
             this.Text = "Master";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Master_MouseDown);

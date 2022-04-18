@@ -32,13 +32,13 @@
             this.labelFName = new System.Windows.Forms.Label();
             this.panelForMainMenu = new System.Windows.Forms.Panel();
             this.panelWithButtons = new System.Windows.Forms.Panel();
+            this.RefreshListButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenNewUserWinButton = new System.Windows.Forms.Button();
             this.OpenUpdateWinButton = new System.Windows.Forms.Button();
             this.OpenDeleteWinButton = new System.Windows.Forms.Button();
             this.OpenInsertWinButton = new System.Windows.Forms.Button();
             this.labelMainMenu = new System.Windows.Forms.Label();
-            this.RefreshListButton = new System.Windows.Forms.Button();
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
             this.shoeField1 = new ShoeAccounting.ShoeField();
             this.labelForAdmin = new System.Windows.Forms.Label();
@@ -90,12 +90,25 @@
             this.panelWithButtons.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelWithButtons_MouseDown);
             this.panelWithButtons.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelWithButtons_MouseMove);
             // 
+            // RefreshListButton
+            // 
+            this.RefreshListButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.RefreshListButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RefreshListButton.ForeColor = System.Drawing.Color.White;
+            this.RefreshListButton.Location = new System.Drawing.Point(0, 0);
+            this.RefreshListButton.Name = "RefreshListButton";
+            this.RefreshListButton.Size = new System.Drawing.Size(334, 41);
+            this.RefreshListButton.TabIndex = 12;
+            this.RefreshListButton.Text = "Обновить список";
+            this.RefreshListButton.UseVisualStyleBackColor = false;
+            this.RefreshListButton.Click += new System.EventHandler(this.RefreshListButton_Click);
+            // 
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.ExitButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ExitButton.ForeColor = System.Drawing.Color.White;
-            this.ExitButton.Location = new System.Drawing.Point(0, 544);
+            this.ExitButton.Location = new System.Drawing.Point(0, 546);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(331, 41);
             this.ExitButton.TabIndex = 11;
@@ -168,19 +181,6 @@
             this.labelMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseDown);
             this.labelMainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseMove);
             // 
-            // RefreshListButton
-            // 
-            this.RefreshListButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.RefreshListButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RefreshListButton.ForeColor = System.Drawing.Color.White;
-            this.RefreshListButton.Location = new System.Drawing.Point(0, 0);
-            this.RefreshListButton.Name = "RefreshListButton";
-            this.RefreshListButton.Size = new System.Drawing.Size(334, 41);
-            this.RefreshListButton.TabIndex = 12;
-            this.RefreshListButton.Text = "Обновить список";
-            this.RefreshListButton.UseVisualStyleBackColor = false;
-            this.RefreshListButton.Click += new System.EventHandler(this.RefreshListButton_Click);
-            // 
             // flowLayoutPanelShoeAccounting
             // 
             this.flowLayoutPanelShoeAccounting.AutoScroll = true;
@@ -243,6 +243,7 @@
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            //this.Load += new System.EventHandler(this.MainMenu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             this.panelForMainMenu.ResumeLayout(false);

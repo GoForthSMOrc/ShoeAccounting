@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comments));
             this.descrBox = new System.Windows.Forms.TextBox();
             this.labelExit = new System.Windows.Forms.Label();
             this.labelDescription = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@
             this.Controls.Add(this.descrBox);
             this.Controls.Add(this.labelExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Comments";
             this.Text = "Comments";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Comments_MouseDown);
