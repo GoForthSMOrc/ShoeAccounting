@@ -14,8 +14,58 @@ namespace ShoeAccounting
         public InsertNewRecord()
         {
             InitializeComponent();
+            dateregBox.MaskInputRejected += new MaskInputRejectedEventHandler(dateregBox_MaskInputRejected);
+            dateregBox.KeyDown += new KeyEventHandler(dateregBox_KeyDown);
+            datecompBox.MaskInputRejected += new MaskInputRejectedEventHandler(datecompBox_MaskInputRejected);
+            datecompBox.KeyDown += new KeyEventHandler(datecompBox_KeyDown);
+        }
+        private void dateregBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (dateregBox.MaskFull)
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен - слишком много данных";
+                toolTipDateCheck.Show("Вы больше не можете вводить какие-либо данные в поле даты. Формат даты 2022-04-25.", dateregBox, 0, -20, 5000);
+            }
+            else if (e.Position == dateregBox.Mask.Length)
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен - конец поля";
+                toolTipDateCheck.Show("Вы не можете добавлять дополнительные символы в конец этого поля даты. Формат даты 2022-04-25.", dateregBox, 0, -20, 5000);
+            }
+            else
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен";
+                toolTipDateCheck.Show("Вы можете добавлять только цифровые символы (0-9) в это поле даты. Формат даты 2022-04-25.", dateregBox, 0, -20, 5000);
+            }
+        }
+        void dateregBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            // The balloon tip is visible for five seconds; if the user types any data before it disappears, collapse it ourselves.
+            toolTipDateCheck.Hide(dateregBox);
         }
 
+        private void datecompBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (datecompBox.MaskFull)
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен - слишком много данных";
+                toolTipDateCheck.Show("Вы больше не можете вводить какие-либо данные в поле даты. Формат даты 2022-04-25.", datecompBox, 0, -20, 5000);
+            }
+            else if (e.Position == datecompBox.Mask.Length)
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен - конец поля";
+                toolTipDateCheck.Show("Вы не можете добавлять дополнительные символы в конец этого поля даты. Формат даты 2022-04-25.", datecompBox, 0, -20, 5000);
+            }
+            else
+            {
+                toolTipDateCheck.ToolTipTitle = "Ввод отклонен";
+                toolTipDateCheck.Show("Вы можете добавлять только цифровые символы (0-9) в это поле даты. Формат даты 2022-04-25.", datecompBox, 0, -20, 5000);
+            }
+        }
+        void datecompBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            // The balloon tip is visible for five seconds; if the user types any data before it disappears, collapse it ourselves.
+            toolTipDateCheck.Hide(datecompBox);
+        }
         private void InsertNewRecord_Load(object sender, EventArgs e)
         {
 

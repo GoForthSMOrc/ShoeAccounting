@@ -36,7 +36,6 @@
             this.lnameBox = new System.Windows.Forms.TextBox();
             this.fnameBox = new System.Windows.Forms.TextBox();
             this.patronBox = new System.Windows.Forms.TextBox();
-            this.phoneBox = new System.Windows.Forms.TextBox();
             this.emailBox = new System.Windows.Forms.TextBox();
             this.statusBox = new System.Windows.Forms.ComboBox();
             this.labelLog = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.closeWinButton = new System.Windows.Forms.Button();
-            this.LabelHelpPhone = new System.Windows.Forms.Label();
+            this.phoneBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // adduserButton
@@ -56,7 +55,7 @@
             this.adduserButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.adduserButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.adduserButton.ForeColor = System.Drawing.Color.White;
-            this.adduserButton.Location = new System.Drawing.Point(146, 472);
+            this.adduserButton.Location = new System.Drawing.Point(144, 457);
             this.adduserButton.Name = "adduserButton";
             this.adduserButton.Size = new System.Drawing.Size(294, 41);
             this.adduserButton.TabIndex = 14;
@@ -80,7 +79,7 @@
             // logBox
             // 
             this.logBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logBox.Location = new System.Drawing.Point(144, 52);
+            this.logBox.Location = new System.Drawing.Point(144, 89);
             this.logBox.Name = "logBox";
             this.logBox.Size = new System.Drawing.Size(421, 37);
             this.logBox.TabIndex = 16;
@@ -88,7 +87,7 @@
             // passBox
             // 
             this.passBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.passBox.Location = new System.Drawing.Point(144, 95);
+            this.passBox.Location = new System.Drawing.Point(144, 132);
             this.passBox.Name = "passBox";
             this.passBox.Size = new System.Drawing.Size(421, 37);
             this.passBox.TabIndex = 17;
@@ -96,7 +95,7 @@
             // lnameBox
             // 
             this.lnameBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lnameBox.Location = new System.Drawing.Point(144, 138);
+            this.lnameBox.Location = new System.Drawing.Point(144, 175);
             this.lnameBox.Name = "lnameBox";
             this.lnameBox.Size = new System.Drawing.Size(421, 37);
             this.lnameBox.TabIndex = 18;
@@ -104,7 +103,7 @@
             // fnameBox
             // 
             this.fnameBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.fnameBox.Location = new System.Drawing.Point(144, 181);
+            this.fnameBox.Location = new System.Drawing.Point(144, 218);
             this.fnameBox.Name = "fnameBox";
             this.fnameBox.Size = new System.Drawing.Size(421, 37);
             this.fnameBox.TabIndex = 19;
@@ -112,23 +111,15 @@
             // patronBox
             // 
             this.patronBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.patronBox.Location = new System.Drawing.Point(144, 224);
+            this.patronBox.Location = new System.Drawing.Point(144, 261);
             this.patronBox.Name = "patronBox";
             this.patronBox.Size = new System.Drawing.Size(421, 37);
             this.patronBox.TabIndex = 20;
             // 
-            // phoneBox
-            // 
-            this.phoneBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.phoneBox.Location = new System.Drawing.Point(144, 267);
-            this.phoneBox.Name = "phoneBox";
-            this.phoneBox.Size = new System.Drawing.Size(421, 37);
-            this.phoneBox.TabIndex = 21;
-            // 
             // emailBox
             // 
             this.emailBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.emailBox.Location = new System.Drawing.Point(144, 352);
+            this.emailBox.Location = new System.Drawing.Point(144, 347);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(421, 37);
             this.emailBox.TabIndex = 22;
@@ -141,7 +132,7 @@
             "Администратор",
             "Мастер",
             "Клиент"});
-            this.statusBox.Location = new System.Drawing.Point(144, 395);
+            this.statusBox.Location = new System.Drawing.Point(144, 390);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(421, 37);
             this.statusBox.TabIndex = 23;
@@ -152,7 +143,7 @@
             this.labelLog.AutoSize = true;
             this.labelLog.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelLog.ForeColor = System.Drawing.Color.White;
-            this.labelLog.Location = new System.Drawing.Point(12, 60);
+            this.labelLog.Location = new System.Drawing.Point(12, 97);
             this.labelLog.Name = "labelLog";
             this.labelLog.Size = new System.Drawing.Size(77, 29);
             this.labelLog.TabIndex = 24;
@@ -165,7 +156,7 @@
             this.labelPass.AutoSize = true;
             this.labelPass.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPass.ForeColor = System.Drawing.Color.White;
-            this.labelPass.Location = new System.Drawing.Point(12, 103);
+            this.labelPass.Location = new System.Drawing.Point(13, 140);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(90, 29);
             this.labelPass.TabIndex = 25;
@@ -178,7 +169,7 @@
             this.labelLName.AutoSize = true;
             this.labelLName.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelLName.ForeColor = System.Drawing.Color.White;
-            this.labelLName.Location = new System.Drawing.Point(12, 146);
+            this.labelLName.Location = new System.Drawing.Point(13, 183);
             this.labelLName.Name = "labelLName";
             this.labelLName.Size = new System.Drawing.Size(109, 29);
             this.labelLName.TabIndex = 26;
@@ -191,7 +182,7 @@
             this.labelFname.AutoSize = true;
             this.labelFname.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelFname.ForeColor = System.Drawing.Color.White;
-            this.labelFname.Location = new System.Drawing.Point(12, 189);
+            this.labelFname.Location = new System.Drawing.Point(13, 226);
             this.labelFname.Name = "labelFname";
             this.labelFname.Size = new System.Drawing.Size(58, 29);
             this.labelFname.TabIndex = 27;
@@ -204,7 +195,7 @@
             this.labelPatron.AutoSize = true;
             this.labelPatron.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPatron.ForeColor = System.Drawing.Color.White;
-            this.labelPatron.Location = new System.Drawing.Point(12, 232);
+            this.labelPatron.Location = new System.Drawing.Point(12, 269);
             this.labelPatron.Name = "labelPatron";
             this.labelPatron.Size = new System.Drawing.Size(112, 29);
             this.labelPatron.TabIndex = 28;
@@ -217,7 +208,7 @@
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelPhone.ForeColor = System.Drawing.Color.White;
-            this.labelPhone.Location = new System.Drawing.Point(12, 275);
+            this.labelPhone.Location = new System.Drawing.Point(12, 312);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(103, 29);
             this.labelPhone.TabIndex = 29;
@@ -230,7 +221,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelEmail.ForeColor = System.Drawing.Color.White;
-            this.labelEmail.Location = new System.Drawing.Point(12, 360);
+            this.labelEmail.Location = new System.Drawing.Point(13, 355);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(76, 29);
             this.labelEmail.TabIndex = 30;
@@ -243,7 +234,7 @@
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelStatus.ForeColor = System.Drawing.Color.White;
-            this.labelStatus.Location = new System.Drawing.Point(12, 403);
+            this.labelStatus.Location = new System.Drawing.Point(13, 398);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(83, 29);
             this.labelStatus.TabIndex = 31;
@@ -256,7 +247,7 @@
             this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.closeWinButton.ForeColor = System.Drawing.Color.White;
-            this.closeWinButton.Location = new System.Drawing.Point(144, 519);
+            this.closeWinButton.Location = new System.Drawing.Point(144, 504);
             this.closeWinButton.Name = "closeWinButton";
             this.closeWinButton.Size = new System.Drawing.Size(294, 41);
             this.closeWinButton.TabIndex = 32;
@@ -264,16 +255,15 @@
             this.closeWinButton.UseVisualStyleBackColor = false;
             this.closeWinButton.Click += new System.EventHandler(this.closeWinButton_Click);
             // 
-            // LabelHelpPhone
+            // phoneBox
             // 
-            this.LabelHelpPhone.AutoSize = true;
-            this.LabelHelpPhone.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LabelHelpPhone.ForeColor = System.Drawing.Color.White;
-            this.LabelHelpPhone.Location = new System.Drawing.Point(12, 304);
-            this.LabelHelpPhone.Name = "LabelHelpPhone";
-            this.LabelHelpPhone.Size = new System.Drawing.Size(428, 29);
-            this.LabelHelpPhone.TabIndex = 33;
-            this.LabelHelpPhone.Text = "*Формат ввода телефона -> 89831112233";
+            this.phoneBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.phoneBox.Location = new System.Drawing.Point(144, 304);
+            this.phoneBox.Mask = "00000000000";
+            this.phoneBox.Name = "phoneBox";
+            this.phoneBox.PromptChar = ' ';
+            this.phoneBox.Size = new System.Drawing.Size(421, 37);
+            this.phoneBox.TabIndex = 34;
             // 
             // AddUser
             // 
@@ -281,7 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(583, 577);
-            this.Controls.Add(this.LabelHelpPhone);
+            this.Controls.Add(this.phoneBox);
             this.Controls.Add(this.closeWinButton);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.labelEmail);
@@ -293,7 +283,6 @@
             this.Controls.Add(this.labelLog);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.emailBox);
-            this.Controls.Add(this.phoneBox);
             this.Controls.Add(this.patronBox);
             this.Controls.Add(this.fnameBox);
             this.Controls.Add(this.lnameBox);
@@ -323,7 +312,6 @@
         private System.Windows.Forms.TextBox lnameBox;
         private System.Windows.Forms.TextBox fnameBox;
         private System.Windows.Forms.TextBox patronBox;
-        private System.Windows.Forms.TextBox phoneBox;
         private System.Windows.Forms.TextBox emailBox;
         private System.Windows.Forms.ComboBox statusBox;
         private System.Windows.Forms.Label labelLog;
@@ -335,6 +323,6 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button closeWinButton;
-        private System.Windows.Forms.Label LabelHelpPhone;
+        private System.Windows.Forms.MaskedTextBox phoneBox;
     }
 }

@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertNewRecord));
             this.labelInsertNewRecord = new System.Windows.Forms.Label();
             this.insertButton = new System.Windows.Forms.Button();
-            this.dateregBox = new System.Windows.Forms.TextBox();
-            this.datecompBox = new System.Windows.Forms.TextBox();
             this.descprobBox = new System.Windows.Forms.TextBox();
             this.numuserBox = new System.Windows.Forms.TextBox();
             this.mastercomBox = new System.Windows.Forms.TextBox();
@@ -46,7 +45,9 @@
             this.labelMaster = new System.Windows.Forms.Label();
             this.labelShoeStatus = new System.Windows.Forms.Label();
             this.shoestatBox = new System.Windows.Forms.ComboBox();
-            this.labelFormatInsertData = new System.Windows.Forms.Label();
+            this.dateregBox = new System.Windows.Forms.MaskedTextBox();
+            this.datecompBox = new System.Windows.Forms.MaskedTextBox();
+            this.toolTipDateCheck = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // labelInsertNewRecord
@@ -74,22 +75,6 @@
             this.insertButton.Text = "Добавить запись";
             this.insertButton.UseVisualStyleBackColor = false;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
-            // 
-            // dateregBox
-            // 
-            this.dateregBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dateregBox.Location = new System.Drawing.Point(12, 118);
-            this.dateregBox.Name = "dateregBox";
-            this.dateregBox.Size = new System.Drawing.Size(294, 37);
-            this.dateregBox.TabIndex = 13;
-            // 
-            // datecompBox
-            // 
-            this.datecompBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.datecompBox.Location = new System.Drawing.Point(12, 199);
-            this.datecompBox.Name = "datecompBox";
-            this.datecompBox.Size = new System.Drawing.Size(294, 37);
-            this.datecompBox.TabIndex = 14;
             // 
             // descprobBox
             // 
@@ -248,16 +233,23 @@
             this.shoestatBox.TabIndex = 26;
             this.shoestatBox.SelectedIndexChanged += new System.EventHandler(this.shoestatBox_SelectedIndexChanged);
             // 
-            // labelFormatInsertData
+            // dateregBox
             // 
-            this.labelFormatInsertData.AutoSize = true;
-            this.labelFormatInsertData.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelFormatInsertData.ForeColor = System.Drawing.Color.White;
-            this.labelFormatInsertData.Location = new System.Drawing.Point(12, 48);
-            this.labelFormatInsertData.Name = "labelFormatInsertData";
-            this.labelFormatInsertData.Size = new System.Drawing.Size(474, 29);
-            this.labelFormatInsertData.TabIndex = 28;
-            this.labelFormatInsertData.Text = "*Формат даты для добавления -> 2022-03-25";
+            this.dateregBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateregBox.Location = new System.Drawing.Point(12, 127);
+            this.dateregBox.Mask = "0000-00-00";
+            this.dateregBox.Name = "dateregBox";
+            this.dateregBox.Size = new System.Drawing.Size(117, 37);
+            this.dateregBox.TabIndex = 46;
+            // 
+            // datecompBox
+            // 
+            this.datecompBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.datecompBox.Location = new System.Drawing.Point(12, 208);
+            this.datecompBox.Mask = "0000-00-00";
+            this.datecompBox.Name = "datecompBox";
+            this.datecompBox.Size = new System.Drawing.Size(117, 37);
+            this.datecompBox.TabIndex = 47;
             // 
             // InsertNewRecord
             // 
@@ -265,7 +257,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1055, 684);
-            this.Controls.Add(this.labelFormatInsertData);
+            this.Controls.Add(this.datecompBox);
+            this.Controls.Add(this.dateregBox);
             this.Controls.Add(this.labelShoeStatus);
             this.Controls.Add(this.shoestatBox);
             this.Controls.Add(this.labelMaster);
@@ -279,8 +272,6 @@
             this.Controls.Add(this.mastercomBox);
             this.Controls.Add(this.numuserBox);
             this.Controls.Add(this.descprobBox);
-            this.Controls.Add(this.datecompBox);
-            this.Controls.Add(this.dateregBox);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.labelInsertNewRecord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -300,8 +291,6 @@
 
         private System.Windows.Forms.Label labelInsertNewRecord;
         private System.Windows.Forms.Button insertButton;
-        private System.Windows.Forms.TextBox dateregBox;
-        private System.Windows.Forms.TextBox datecompBox;
         private System.Windows.Forms.TextBox descprobBox;
         private System.Windows.Forms.TextBox numuserBox;
         private System.Windows.Forms.TextBox mastercomBox;
@@ -315,6 +304,8 @@
         private System.Windows.Forms.Label labelMaster;
         private System.Windows.Forms.Label labelShoeStatus;
         private System.Windows.Forms.ComboBox shoestatBox;
-        private System.Windows.Forms.Label labelFormatInsertData;
+        private System.Windows.Forms.MaskedTextBox dateregBox;
+        private System.Windows.Forms.MaskedTextBox datecompBox;
+        private System.Windows.Forms.ToolTip toolTipDateCheck;
     }
 }
