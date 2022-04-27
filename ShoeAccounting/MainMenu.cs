@@ -327,6 +327,7 @@ namespace ShoeAccounting
         {
             if (findBox.Text == String.Empty)
             {
+                CheckUsingElement.InsertIntoCheckUsingElement(false);
                 switch (OurUserInfo.StatusU)
                 {
                     case ("Администратор"):
@@ -344,6 +345,7 @@ namespace ShoeAccounting
             }
             else
             {
+                
                 flowLayoutPanelShoeAccounting.Controls.Clear();
                 //String query = "Select shoeaccounting.id_shoeaccounting, date_format(dateregistration,'%d.%m.%y' ),date_format(dateofcompletion,'%d.%m.%y'), statusshoe.namestatusshoe from shoeaccounting join statusshoe on shoeaccounting.id_statusshoe = statusshoe.id_statusshoe where id_shoeaccounting = '" + findBox.Text + "';";//
                 String query = "call sp_FindByNumber('" + findBox.Text + "');";
@@ -383,6 +385,8 @@ namespace ShoeAccounting
 
         private void findBox_MouseClick(object sender, MouseEventArgs e)
         {
+            NumberCheck.InsertIntoNumber(null);
+            ControlNUMBER.InsertIntoControlNUMBER(null);
             findBox.Clear();
             getInfo(flowLayoutPanelShoeAccounting);
         }

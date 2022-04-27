@@ -66,11 +66,13 @@
             // updateButton
             // 
             this.updateButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.updateButton.FlatAppearance.BorderSize = 0;
+            this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.updateButton.ForeColor = System.Drawing.Color.White;
-            this.updateButton.Location = new System.Drawing.Point(13, 598);
+            this.updateButton.Location = new System.Drawing.Point(1, 578);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(294, 41);
+            this.updateButton.Size = new System.Drawing.Size(336, 61);
             this.updateButton.TabIndex = 14;
             this.updateButton.Text = "Обновить запись";
             this.updateButton.UseVisualStyleBackColor = false;
@@ -79,11 +81,13 @@
             // closeWinButton
             // 
             this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeWinButton.FlatAppearance.BorderSize = 0;
+            this.closeWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.closeWinButton.ForeColor = System.Drawing.Color.White;
-            this.closeWinButton.Location = new System.Drawing.Point(13, 645);
+            this.closeWinButton.Location = new System.Drawing.Point(1, 636);
             this.closeWinButton.Name = "closeWinButton";
-            this.closeWinButton.Size = new System.Drawing.Size(294, 41);
+            this.closeWinButton.Size = new System.Drawing.Size(336, 61);
             this.closeWinButton.TabIndex = 15;
             this.closeWinButton.Text = "Закрыть окно";
             this.closeWinButton.UseVisualStyleBackColor = false;

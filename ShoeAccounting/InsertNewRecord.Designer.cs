@@ -66,11 +66,13 @@
             // insertButton
             // 
             this.insertButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.insertButton.FlatAppearance.BorderSize = 0;
+            this.insertButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.insertButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.insertButton.ForeColor = System.Drawing.Color.White;
-            this.insertButton.Location = new System.Drawing.Point(12, 584);
+            this.insertButton.Location = new System.Drawing.Point(0, 565);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(294, 41);
+            this.insertButton.Size = new System.Drawing.Size(336, 61);
             this.insertButton.TabIndex = 12;
             this.insertButton.Text = "Добавить запись";
             this.insertButton.UseVisualStyleBackColor = false;
@@ -170,11 +172,13 @@
             // closeWinButton
             // 
             this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeWinButton.FlatAppearance.BorderSize = 0;
+            this.closeWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.closeWinButton.ForeColor = System.Drawing.Color.White;
-            this.closeWinButton.Location = new System.Drawing.Point(12, 631);
+            this.closeWinButton.Location = new System.Drawing.Point(0, 623);
             this.closeWinButton.Name = "closeWinButton";
-            this.closeWinButton.Size = new System.Drawing.Size(294, 41);
+            this.closeWinButton.Size = new System.Drawing.Size(336, 61);
             this.closeWinButton.TabIndex = 23;
             this.closeWinButton.Text = "Закрыть окно";
             this.closeWinButton.UseVisualStyleBackColor = false;
@@ -182,6 +186,7 @@
             // 
             // masterBox
             // 
+            this.masterBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.masterBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.masterBox.FormattingEnabled = true;
             this.masterBox.Items.AddRange(new object[] {
@@ -221,6 +226,7 @@
             // 
             // shoestatBox
             // 
+            this.shoestatBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shoestatBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.shoestatBox.FormattingEnabled = true;
             this.shoestatBox.Items.AddRange(new object[] {

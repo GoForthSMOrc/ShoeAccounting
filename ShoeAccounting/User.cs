@@ -6,15 +6,45 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
     public partial class User : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+    (
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+    );
         public User()
         {
             InitializeComponent();
             getInfo();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.BackColor = System.Drawing.Color.FromArgb(37, 42, 64);
+            labelDescription.ForeColor = Color.FromArgb(0, 126, 249);
+            labelF.ForeColor = Color.FromArgb(0, 126, 249);
+            labeli.ForeColor = Color.FromArgb(0, 126, 249);
+            labelO.ForeColor = Color.FromArgb(0, 126, 249);
+            labelPhone.ForeColor = Color.FromArgb(0, 126, 249);
+            labelMail.ForeColor = Color.FromArgb(0, 126, 249);
+            fBox.ForeColor = Color.FromArgb(200, 200, 200);
+            fBox.BackColor = Color.FromArgb(74, 79, 99);
+            iBox.ForeColor = Color.FromArgb(200, 200, 200);
+            iBox.BackColor = Color.FromArgb(74, 79, 99);
+            oBox.ForeColor = Color.FromArgb(200, 200, 200);
+            oBox.BackColor = Color.FromArgb(74, 79, 99);
+            pBox.ForeColor = Color.FromArgb(200, 200, 200);
+            pBox.BackColor = Color.FromArgb(74, 79, 99);
+            mBox.ForeColor = Color.FromArgb(200, 200, 200);
+            mBox.BackColor = Color.FromArgb(74, 79, 99);
         }
 
         void getInfo()

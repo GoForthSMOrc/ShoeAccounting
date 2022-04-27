@@ -108,6 +108,14 @@ namespace ShoeAccounting
                 labelDateCompletion.ForeColor = Color.FromArgb(0, 126, 249);
                 labelStat.ForeColor = Color.FromArgb(0, 126, 249);
                 labelStatus.ForeColor = Color.FromArgb(0, 126, 249);
+                masterinfoButton.BackColor = Color.FromArgb(37, 42, 64);
+                masterinfoButton.ForeColor = Color.FromArgb(0, 126, 249);
+                userinfoButton.BackColor = Color.FromArgb(37, 42, 64);
+                userinfoButton.ForeColor = Color.FromArgb(0, 126, 249);
+                showproblemButton.BackColor = Color.FromArgb(37, 42, 64);
+                showproblemButton.ForeColor = Color.FromArgb(0, 126, 249);
+                showCommsButton.BackColor = Color.FromArgb(37, 42, 64);
+                showCommsButton.ForeColor = Color.FromArgb(0, 126, 249);
                 CheckUsingElement.InsertIntoCheckUsingElement(true);
           }
           else
@@ -123,6 +131,14 @@ namespace ShoeAccounting
                labelDateCompletion.ForeColor = Color.White;
                labelStat.ForeColor = Color.White;
                labelStatus.ForeColor = Color.White;
+               masterinfoButton.BackColor = Color.FromArgb(74, 79, 99);
+               masterinfoButton.ForeColor = Color.FromArgb(46, 51, 73);
+               userinfoButton.BackColor = Color.FromArgb(74, 79, 99);
+               userinfoButton.ForeColor = Color.FromArgb(46, 51, 73);
+               showproblemButton.BackColor = Color.FromArgb(74, 79, 99);
+               showproblemButton.ForeColor = Color.FromArgb(46, 51, 73);
+               showCommsButton.BackColor = Color.FromArgb(74, 79, 99);
+               showCommsButton.ForeColor = Color.FromArgb(46, 51, 73);
                CheckUsingElement.InsertIntoCheckUsingElement(true);
                CheckUsingElement.InsertIntoCheckUsingElement(false);
                NumberCheck.InsertIntoNumber(null);

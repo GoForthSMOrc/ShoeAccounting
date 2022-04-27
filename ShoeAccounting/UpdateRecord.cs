@@ -6,19 +6,60 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
+
     public partial class UpdateRecord : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+         (
+             int nLeftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nWidthEllipse,
+             int nHeightEllipse
+         );
         public UpdateRecord()
         {
             InitializeComponent();
             getInfo();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             dateregBox.MaskInputRejected += new MaskInputRejectedEventHandler(dateregBox_MaskInputRejected);
             dateregBox.KeyDown += new KeyEventHandler(dateregBox_KeyDown);
             datecompBox.MaskInputRejected += new MaskInputRejectedEventHandler(datecompBox_MaskInputRejected);
             datecompBox.KeyDown += new KeyEventHandler(datecompBox_KeyDown);
+            this.BackColor = System.Drawing.Color.FromArgb(37, 42, 64);
+            labelUpdateRec.ForeColor = Color.FromArgb(0, 126, 249);
+            labelDateReg.ForeColor = Color.FromArgb(0, 126, 249);
+            labelDateComp.ForeColor = Color.FromArgb(0, 126, 249);
+            labelNumUser.ForeColor = Color.FromArgb(0, 126, 249);
+            labelMaster.ForeColor = Color.FromArgb(0, 126, 249);
+            labelShoeStatus.ForeColor = Color.FromArgb(0, 126, 249);
+            labelDescProb.ForeColor = Color.FromArgb(0, 126, 249);
+            labelMasterCom.ForeColor = Color.FromArgb(0, 126, 249);
+            dateregBox.ForeColor = Color.FromArgb(200, 200, 200);
+            dateregBox.BackColor = Color.FromArgb(74, 79, 99);
+            datecompBox.ForeColor = Color.FromArgb(200, 200, 200);
+            datecompBox.BackColor = Color.FromArgb(74, 79, 99);
+            numuserBox.ForeColor = Color.FromArgb(200, 200, 200);
+            numuserBox.BackColor = Color.FromArgb(74, 79, 99);
+            masterBox.ForeColor = Color.FromArgb(200, 200, 200);
+            masterBox.BackColor = Color.FromArgb(74, 79, 99);
+            shoestatBox.ForeColor = Color.FromArgb(200, 200, 200);
+            shoestatBox.BackColor = Color.FromArgb(74, 79, 99);
+            descprobBox.ForeColor = Color.FromArgb(200, 200, 200);
+            descprobBox.BackColor = Color.FromArgb(74, 79, 99);
+            mastercomBox.ForeColor = Color.FromArgb(200, 200, 200);
+            mastercomBox.BackColor = Color.FromArgb(74, 79, 99);
+            updateButton.ForeColor = Color.FromArgb(0, 126, 249);
+            updateButton.BackColor = Color.FromArgb(37, 42, 64);
+            closeWinButton.ForeColor = Color.FromArgb(0, 126, 249);
+            closeWinButton.BackColor = Color.FromArgb(37, 42, 64);
         }
 
         private void dateregBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

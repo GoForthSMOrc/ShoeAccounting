@@ -6,15 +6,32 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
     public partial class Comments : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+         (
+             int nLeftRect,
+             int nTopRect,
+             int nRightRect,
+             int nBottomRect,
+             int nWidthEllipse,
+             int nHeightEllipse
+         );
         public Comments()
         {
             InitializeComponent();
             getInfo();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.BackColor = System.Drawing.Color.FromArgb(37, 42, 64);
+            labelDescription.ForeColor = Color.FromArgb(0, 126, 249);
+            descrBox.BackColor = Color.FromArgb(74, 79, 99);
+            descrBox.ForeColor = Color.FromArgb(200, 200, 200);
         }
 
         void getInfo()
