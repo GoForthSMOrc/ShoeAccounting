@@ -53,11 +53,13 @@
             // adduserButton
             // 
             this.adduserButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.adduserButton.FlatAppearance.BorderSize = 0;
+            this.adduserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adduserButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.adduserButton.ForeColor = System.Drawing.Color.White;
-            this.adduserButton.Location = new System.Drawing.Point(144, 457);
+            this.adduserButton.Location = new System.Drawing.Point(-1, 460);
             this.adduserButton.Name = "adduserButton";
-            this.adduserButton.Size = new System.Drawing.Size(294, 41);
+            this.adduserButton.Size = new System.Drawing.Size(584, 61);
             this.adduserButton.TabIndex = 14;
             this.adduserButton.Text = "Добавить пользователя";
             this.adduserButton.UseVisualStyleBackColor = false;
@@ -245,11 +247,13 @@
             // closeWinButton
             // 
             this.closeWinButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.closeWinButton.FlatAppearance.BorderSize = 0;
+            this.closeWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.closeWinButton.ForeColor = System.Drawing.Color.White;
-            this.closeWinButton.Location = new System.Drawing.Point(144, 504);
+            this.closeWinButton.Location = new System.Drawing.Point(-1, 518);
             this.closeWinButton.Name = "closeWinButton";
-            this.closeWinButton.Size = new System.Drawing.Size(294, 41);
+            this.closeWinButton.Size = new System.Drawing.Size(584, 61);
             this.closeWinButton.TabIndex = 32;
             this.closeWinButton.Text = "Закрыть окно";
             this.closeWinButton.UseVisualStyleBackColor = false;
