@@ -6,14 +6,43 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
     public partial class Authorization : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+    (
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+    );
+
+
+
         public Authorization()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.BackColor = Color.FromArgb(46, 51, 73);
+            panelAuthorization.BackColor = Color.FromArgb(24, 30, 54);
+            enterButton.ForeColor = Color.FromArgb(0, 126, 249);
+            enterButton.BackColor = Color.FromArgb(46, 51, 73);
+            exitButton.ForeColor = Color.FromArgb(0, 126, 249);
+            exitButton.BackColor = Color.FromArgb(46, 51, 73);
+            labelAuthorization.ForeColor = Color.FromArgb(0, 126, 249);
+            labelLogin.ForeColor = Color.FromArgb(0, 126, 249);
+            labelPassword.ForeColor = Color.FromArgb(0, 126, 249);
+            logBox.BackColor = Color.FromArgb(74, 79, 99);
+            passBox.BackColor = Color.FromArgb(74, 79, 99);
+            logBox.ForeColor = Color.FromArgb(200, 200, 200);
+            passBox.ForeColor = Color.FromArgb(200, 200, 200);
         }
 
         private void Authorization_Load(object sender, EventArgs e)

@@ -5,14 +5,38 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
     public partial class ExitConfirmation : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+    (
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+    );
+
+
+
         public ExitConfirmation()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.BackColor = Color.FromArgb(46, 51, 73);
+            panelExitConfirmation.BackColor = Color.FromArgb(24, 30, 54);
+            yesButton.ForeColor = Color.FromArgb(0, 126, 249);
+            notButton.BackColor = Color.FromArgb(46, 51, 73);
+            notButton.ForeColor = Color.FromArgb(0, 126, 249);
+            yesButton.BackColor = Color.FromArgb(46, 51, 73);
+            labelExitConfirmation.ForeColor = Color.FromArgb(0, 126, 249);
+            labelExitConfirmation.BackColor = Color.FromArgb(24, 30, 54);
         }
 
         //Подтверждение выхода: клик кнопки Да//

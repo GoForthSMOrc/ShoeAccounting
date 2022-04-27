@@ -126,11 +126,13 @@
             // enterButton
             // 
             this.enterButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.enterButton.FlatAppearance.BorderSize = 0;
+            this.enterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enterButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.enterButton.ForeColor = System.Drawing.Color.White;
-            this.enterButton.Location = new System.Drawing.Point(219, 197);
+            this.enterButton.Location = new System.Drawing.Point(0, 202);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(135, 41);
+            this.enterButton.Size = new System.Drawing.Size(366, 60);
             this.enterButton.TabIndex = 6;
             this.enterButton.Text = "Войти";
             this.enterButton.UseVisualStyleBackColor = false;
@@ -140,11 +142,14 @@
             // 
             this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.exitButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.exitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(219, 261);
+            this.exitButton.Location = new System.Drawing.Point(0, 261);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(135, 41);
+            this.exitButton.Size = new System.Drawing.Size(366, 60);
             this.exitButton.TabIndex = 7;
             this.exitButton.Text = "Выйти";
             this.exitButton.UseVisualStyleBackColor = false;

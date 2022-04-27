@@ -56,7 +56,7 @@
             this.panelLine2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panelLine2.Location = new System.Drawing.Point(0, 77);
             this.panelLine2.Name = "panelLine2";
-            this.panelLine2.Size = new System.Drawing.Size(394, 10);
+            this.panelLine2.Size = new System.Drawing.Size(394, 5);
             this.panelLine2.TabIndex = 3;
             this.panelLine2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseDown);
             this.panelLine2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLine2_MouseMove);

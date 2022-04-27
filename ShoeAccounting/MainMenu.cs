@@ -7,14 +7,49 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
 {
     public partial class MainMenu : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+    (
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+    );
+
+
         public MainMenu()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.BackColor = Color.FromArgb(46, 51, 73);
+            panelForMainMenu.BackColor = Color.FromArgb(24, 30, 54);
+            RefreshListButton.ForeColor = Color.FromArgb(0, 126, 249);
+            RefreshListButton.BackColor = Color.FromArgb(24, 30, 54);
+            OpenInsertWinButton.BackColor = Color.FromArgb(24, 30, 54);
+            OpenInsertWinButton.ForeColor = Color.FromArgb(0, 126, 249);
+            OpenDeleteWinButton.BackColor = Color.FromArgb(24, 30, 54);
+            OpenDeleteWinButton.ForeColor = Color.FromArgb(0, 126, 249);
+            OpenUpdateWinButton.BackColor = Color.FromArgb(24, 30, 54);
+            OpenUpdateWinButton.ForeColor = Color.FromArgb(0, 126, 249);
+            OpenNewUserWinButton.BackColor = Color.FromArgb(24, 30, 54);
+            OpenNewUserWinButton.ForeColor = Color.FromArgb(0, 126, 249);
+            labelMainMenu.ForeColor = Color.FromArgb(0, 126, 249);
+            ExitButton.BackColor = Color.FromArgb(24, 30, 54);
+            ExitButton.ForeColor = Color.FromArgb(0, 126, 249);
+            labelFName.ForeColor = Color.FromArgb(0, 126, 249);
+            findBox.BackColor = Color.FromArgb(74, 79, 99);
+            findBox.ForeColor = Color.FromArgb(200, 200, 200);
+
+
             getNameUser();
             switch (OurUserInfo.StatusU)
             {
