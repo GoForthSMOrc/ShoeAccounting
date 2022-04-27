@@ -27,8 +27,15 @@ namespace ShoeAccounting
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            
-            
+            this.BackColor = System.Drawing.Color.FromArgb(74, 79, 99);
+            masterinfoButton.BackColor = Color.FromArgb(74, 79, 99);
+            masterinfoButton.ForeColor = Color.FromArgb(46, 51, 73);
+            userinfoButton.BackColor = Color.FromArgb(74, 79, 99);
+            userinfoButton.ForeColor = Color.FromArgb(46, 51, 73);
+            showproblemButton.BackColor = Color.FromArgb(74, 79, 99);
+            showproblemButton.ForeColor = Color.FromArgb(46, 51, 73);
+            showCommsButton.BackColor = Color.FromArgb(74, 79, 99);
+            showCommsButton.ForeColor = Color.FromArgb(46, 51, 73);
 
             switch (OurUserInfo.StatusU)
             {
@@ -88,25 +95,42 @@ namespace ShoeAccounting
 
         private void ShoeField_Click(object sender, EventArgs e)
         {
-          if (BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == false)
+          if (BackColor == Color.FromArgb(74, 79, 99) && CheckUsingElement.CheckUsing == false)
           {
-            NumberCheck.InsertIntoNumber(NUMBER);
-            ControlNUMBER.InsertIntoControlNUMBER(NUMBER);
-            BackColor = Color.Navy;
-            CheckUsingElement.InsertIntoCheckUsingElement(true);
+                NumberCheck.InsertIntoNumber(NUMBER);
+                ControlNUMBER.InsertIntoControlNUMBER(NUMBER);
+                BackColor = Color.FromArgb(37, 42, 64);
+                labelNum.ForeColor = Color.FromArgb(0, 126, 249);
+                labelNumber.ForeColor = Color.FromArgb(0, 126, 249);
+                labelDateReg.ForeColor = Color.FromArgb(0, 126, 249);
+                labelDateRegistration.ForeColor = Color.FromArgb(0, 126, 249);
+                labelDateComp.ForeColor = Color.FromArgb(0, 126, 249);
+                labelDateCompletion.ForeColor = Color.FromArgb(0, 126, 249);
+                labelStat.ForeColor = Color.FromArgb(0, 126, 249);
+                labelStatus.ForeColor = Color.FromArgb(0, 126, 249);
+                CheckUsingElement.InsertIntoCheckUsingElement(true);
           }
           else
           {
-            if(BackColor == Color.Navy && CheckUsingElement.CheckUsing == true)
+            if(BackColor == Color.FromArgb(37, 42, 64) && CheckUsingElement.CheckUsing == true)
             {
-               BackColor = Color.CornflowerBlue;
+               BackColor = Color.FromArgb(74, 79, 99);
+               labelNum.ForeColor = Color.White;
+               labelNumber.ForeColor = Color.White;
+               labelDateReg.ForeColor = Color.White;
+               labelDateRegistration.ForeColor = Color.White;
+               labelDateComp.ForeColor = Color.White;
+               labelDateCompletion.ForeColor = Color.White;
+               labelStat.ForeColor = Color.White;
+               labelStatus.ForeColor = Color.White;
+               CheckUsingElement.InsertIntoCheckUsingElement(true);
                CheckUsingElement.InsertIntoCheckUsingElement(false);
                NumberCheck.InsertIntoNumber(null);
                ControlNUMBER.InsertIntoControlNUMBER(null);
                 }
             else
             { 
-               if(BackColor == Color.CornflowerBlue && CheckUsingElement.CheckUsing == true)
+               if(BackColor == Color.FromArgb(74, 79, 99) && CheckUsingElement.CheckUsing == true)
                {
                   MessageBox.Show("Чтобы работать с другой записью необходимо убрать выделение с прошлой!");
                }
@@ -164,7 +188,7 @@ namespace ShoeAccounting
 
         private void ShoeField_MouseEnter(object sender, EventArgs e)
         {
-            if(BackColor == Color.CornflowerBlue)
+            if(BackColor == Color.FromArgb(74, 79, 99))
             {
                NumberCheck.InsertIntoNumber(null);
             }

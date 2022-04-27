@@ -46,11 +46,13 @@
             // showproblemButton
             // 
             this.showproblemButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.showproblemButton.FlatAppearance.BorderSize = 0;
+            this.showproblemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showproblemButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showproblemButton.ForeColor = System.Drawing.Color.White;
-            this.showproblemButton.Location = new System.Drawing.Point(641, 109);
+            this.showproblemButton.Location = new System.Drawing.Point(651, 121);
             this.showproblemButton.Name = "showproblemButton";
-            this.showproblemButton.Size = new System.Drawing.Size(294, 41);
+            this.showproblemButton.Size = new System.Drawing.Size(294, 61);
             this.showproblemButton.TabIndex = 14;
             this.showproblemButton.Text = "Описание проблемы";
             this.showproblemButton.UseVisualStyleBackColor = false;
@@ -59,11 +61,13 @@
             // showCommsButton
             // 
             this.showCommsButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.showCommsButton.FlatAppearance.BorderSize = 0;
+            this.showCommsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showCommsButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showCommsButton.ForeColor = System.Drawing.Color.White;
-            this.showCommsButton.Location = new System.Drawing.Point(641, 156);
+            this.showCommsButton.Location = new System.Drawing.Point(651, 181);
             this.showCommsButton.Name = "showCommsButton";
-            this.showCommsButton.Size = new System.Drawing.Size(294, 41);
+            this.showCommsButton.Size = new System.Drawing.Size(294, 61);
             this.showCommsButton.TabIndex = 15;
             this.showCommsButton.Text = "Комментарии";
             this.showCommsButton.UseVisualStyleBackColor = false;
@@ -105,11 +109,13 @@
             // userinfoButton
             // 
             this.userinfoButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.userinfoButton.FlatAppearance.BorderSize = 0;
+            this.userinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userinfoButton.ForeColor = System.Drawing.Color.White;
-            this.userinfoButton.Location = new System.Drawing.Point(641, 62);
+            this.userinfoButton.Location = new System.Drawing.Point(651, 60);
             this.userinfoButton.Name = "userinfoButton";
-            this.userinfoButton.Size = new System.Drawing.Size(294, 41);
+            this.userinfoButton.Size = new System.Drawing.Size(294, 61);
             this.userinfoButton.TabIndex = 19;
             this.userinfoButton.Text = "Пользователь";
             this.userinfoButton.UseVisualStyleBackColor = false;
@@ -118,11 +124,13 @@
             // masterinfoButton
             // 
             this.masterinfoButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.masterinfoButton.FlatAppearance.BorderSize = 0;
+            this.masterinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.masterinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.masterinfoButton.ForeColor = System.Drawing.Color.White;
-            this.masterinfoButton.Location = new System.Drawing.Point(641, 15);
+            this.masterinfoButton.Location = new System.Drawing.Point(651, 0);
             this.masterinfoButton.Name = "masterinfoButton";
-            this.masterinfoButton.Size = new System.Drawing.Size(294, 41);
+            this.masterinfoButton.Size = new System.Drawing.Size(294, 61);
             this.masterinfoButton.TabIndex = 20;
             this.masterinfoButton.Text = "Мастер";
             this.masterinfoButton.UseVisualStyleBackColor = false;
@@ -166,7 +174,7 @@
             this.labelDateCompletion.AutoSize = true;
             this.labelDateCompletion.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelDateCompletion.ForeColor = System.Drawing.Color.White;
-            this.labelDateCompletion.Location = new System.Drawing.Point(215, 140);
+            this.labelDateCompletion.Location = new System.Drawing.Point(215, 137);
             this.labelDateCompletion.Name = "labelDateCompletion";
             this.labelDateCompletion.Size = new System.Drawing.Size(183, 29);
             this.labelDateCompletion.TabIndex = 24;
@@ -185,7 +193,7 @@
             // 
             // panelLine
             // 
-            this.panelLine.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelLine.BackColor = System.Drawing.Color.Navy;
             this.panelLine.Location = new System.Drawing.Point(0, 240);
             this.panelLine.Name = "panelLine";
             this.panelLine.Size = new System.Drawing.Size(950, 5);
