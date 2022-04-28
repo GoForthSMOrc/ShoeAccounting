@@ -24,12 +24,19 @@ namespace ShoeAccounting
         int nWidthEllipse,
         int nHeightEllipse
     );
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+
+        private int borderSize = 2;
 
         public MainMenu()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.Padding= new Padding(borderSize);
+            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.BackColor = Color.FromArgb(46, 51, 73);
             panelForMainMenu.BackColor = Color.FromArgb(24, 30, 54);
             RefreshListButton.ForeColor = Color.FromArgb(0, 126, 249);
@@ -48,6 +55,10 @@ namespace ShoeAccounting
             labelFName.ForeColor = Color.FromArgb(0, 126, 249);
             findBox.BackColor = Color.FromArgb(74, 79, 99);
             findBox.ForeColor = Color.FromArgb(200, 200, 200);
+
+            var designSize = this.ClientSize;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.Size = designSize;
 
 
             getNameUser();
@@ -250,7 +261,9 @@ namespace ShoeAccounting
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)
         {
-            lastPoint = new Point(e.X, e.Y);
+            //lastPoint = new Point(e.X, e.Y);
+            ReleaseCapture();
+            SendMessage(this.Handle,0x112,0xf012,0);
         }
 
         private void panelForMainMenu_MouseMove(object sender, MouseEventArgs e)
@@ -431,6 +444,42 @@ namespace ShoeAccounting
             }
         }
 
-       
+        //overriden methods
+        protected override void WndProc(ref Message m)
+        {
+
+            const int WM_NCCALSIZE = 0x0083;
+            if(m.Msg == WM_NCCALSIZE && m.WParam.ToInt32()==1)
+            {
+                m.Result = new IntPtr(0xF0);
+                return;
+            }
+            base.WndProc(ref m);
+        }
+
+        private void MainMenu_Resize(object sender, EventArgs e)
+        {
+            AdjustForm();
+        }
+
+        private void AdjustForm()
+        {
+            switch(this.WindowState)
+            {
+                case FormWindowState.Maximized:
+                    this.Padding = new Padding(8, 8, 8, 0);
+                    break;
+                    case FormWindowState.Normal:
+                    if (this.Padding.Top != borderSize)
+                        this.Padding = new Padding(borderSize);
+                    break;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
