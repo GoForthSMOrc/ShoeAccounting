@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.labelFName = new System.Windows.Forms.Label();
             this.panelForMainMenu = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelMainMenu = new System.Windows.Forms.Label();
             this.RefreshListButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OpenUpdateWinButton = new System.Windows.Forms.Button();
             this.OpenDeleteWinButton = new System.Windows.Forms.Button();
             this.OpenNewUserWinButton = new System.Windows.Forms.Button();
-            this.labelMainMenu = new System.Windows.Forms.Label();
             this.OpenInsertWinButton = new System.Windows.Forms.Button();
             this.flowLayoutPanelShoeAccounting = new System.Windows.Forms.FlowLayoutPanel();
             this.shoeField1 = new ShoeAccounting.ShoeField();
@@ -44,6 +45,7 @@
             this.findBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelForMainMenu.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.flowLayoutPanelShoeAccounting.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,26 +55,25 @@
             this.labelFName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelFName.AutoSize = true;
             this.labelFName.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelFName.ForeColor = System.Drawing.Color.White;
-            this.labelFName.Location = new System.Drawing.Point(0, 6);
+            this.labelFName.Location = new System.Drawing.Point(0, 40);
             this.labelFName.Name = "labelFName";
-            this.labelFName.Size = new System.Drawing.Size(299, 29);
+            this.labelFName.Size = new System.Drawing.Size(990, 29);
             this.labelFName.TabIndex = 0;
             this.labelFName.Text = "Приветствие пользователя";
+            this.labelFName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelFName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelFName_MouseDown);
-            this.labelFName.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelFName_MouseMove);
             // 
             // panelForMainMenu
             // 
             this.panelForMainMenu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panelForMainMenu.Controls.Add(this.panel2);
             this.panelForMainMenu.Controls.Add(this.RefreshListButton);
             this.panelForMainMenu.Controls.Add(this.ExitButton);
             this.panelForMainMenu.Controls.Add(this.OpenUpdateWinButton);
             this.panelForMainMenu.Controls.Add(this.OpenDeleteWinButton);
             this.panelForMainMenu.Controls.Add(this.OpenNewUserWinButton);
-            this.panelForMainMenu.Controls.Add(this.labelMainMenu);
             this.panelForMainMenu.Controls.Add(this.OpenInsertWinButton);
             this.panelForMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelForMainMenu.Location = new System.Drawing.Point(0, 0);
@@ -81,19 +82,36 @@
             this.panelForMainMenu.TabIndex = 1;
             this.panelForMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelForMainMenu_MouseDown);
             this.panelForMainMenu.MouseEnter += new System.EventHandler(this.panelForMainMenu_MouseEnter);
-            this.panelForMainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelForMainMenu_MouseMove);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelMainMenu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(359, 132);
+            this.panel2.TabIndex = 13;
+            // 
+            // labelMainMenu
+            // 
+            this.labelMainMenu.AutoSize = true;
+            this.labelMainMenu.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMainMenu.ForeColor = System.Drawing.Color.White;
+            this.labelMainMenu.Location = new System.Drawing.Point(3, 9);
+            this.labelMainMenu.Name = "labelMainMenu";
+            this.labelMainMenu.Size = new System.Drawing.Size(161, 29);
+            this.labelMainMenu.TabIndex = 2;
+            this.labelMainMenu.Text = "Главное меню";
+            this.labelMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseDown);
             // 
             // RefreshListButton
             // 
-            this.RefreshListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.RefreshListButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.RefreshListButton.FlatAppearance.BorderSize = 0;
             this.RefreshListButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RefreshListButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.RefreshListButton.ForeColor = System.Drawing.Color.White;
-            this.RefreshListButton.Location = new System.Drawing.Point(0, 115);
+            this.RefreshListButton.Location = new System.Drawing.Point(0, 138);
             this.RefreshListButton.MaximumSize = new System.Drawing.Size(359, 60);
             this.RefreshListButton.MinimumSize = new System.Drawing.Size(359, 60);
             this.RefreshListButton.Name = "RefreshListButton";
@@ -131,7 +149,7 @@
             this.OpenUpdateWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenUpdateWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenUpdateWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenUpdateWinButton.Location = new System.Drawing.Point(0, 294);
+            this.OpenUpdateWinButton.Location = new System.Drawing.Point(0, 330);
             this.OpenUpdateWinButton.MaximumSize = new System.Drawing.Size(359, 60);
             this.OpenUpdateWinButton.MinimumSize = new System.Drawing.Size(359, 60);
             this.OpenUpdateWinButton.Name = "OpenUpdateWinButton";
@@ -151,7 +169,7 @@
             this.OpenDeleteWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenDeleteWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenDeleteWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenDeleteWinButton.Location = new System.Drawing.Point(0, 238);
+            this.OpenDeleteWinButton.Location = new System.Drawing.Point(0, 270);
             this.OpenDeleteWinButton.MaximumSize = new System.Drawing.Size(359, 60);
             this.OpenDeleteWinButton.MinimumSize = new System.Drawing.Size(359, 60);
             this.OpenDeleteWinButton.Name = "OpenDeleteWinButton";
@@ -171,7 +189,7 @@
             this.OpenNewUserWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenNewUserWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenNewUserWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenNewUserWinButton.Location = new System.Drawing.Point(0, 360);
+            this.OpenNewUserWinButton.Location = new System.Drawing.Point(0, 396);
             this.OpenNewUserWinButton.MaximumSize = new System.Drawing.Size(359, 60);
             this.OpenNewUserWinButton.MinimumSize = new System.Drawing.Size(359, 60);
             this.OpenNewUserWinButton.Name = "OpenNewUserWinButton";
@@ -180,19 +198,6 @@
             this.OpenNewUserWinButton.Text = "Добавить пользователя";
             this.OpenNewUserWinButton.UseVisualStyleBackColor = false;
             this.OpenNewUserWinButton.Click += new System.EventHandler(this.OpenNewUserWinButton_Click);
-            // 
-            // labelMainMenu
-            // 
-            this.labelMainMenu.AutoSize = true;
-            this.labelMainMenu.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMainMenu.ForeColor = System.Drawing.Color.White;
-            this.labelMainMenu.Location = new System.Drawing.Point(12, 9);
-            this.labelMainMenu.Name = "labelMainMenu";
-            this.labelMainMenu.Size = new System.Drawing.Size(161, 29);
-            this.labelMainMenu.TabIndex = 2;
-            this.labelMainMenu.Text = "Главное меню";
-            this.labelMainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseDown);
-            this.labelMainMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelMainMenu_MouseMove);
             // 
             // OpenInsertWinButton
             // 
@@ -204,7 +209,7 @@
             this.OpenInsertWinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenInsertWinButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.OpenInsertWinButton.ForeColor = System.Drawing.Color.White;
-            this.OpenInsertWinButton.Location = new System.Drawing.Point(0, 181);
+            this.OpenInsertWinButton.Location = new System.Drawing.Point(0, 204);
             this.OpenInsertWinButton.MaximumSize = new System.Drawing.Size(359, 60);
             this.OpenInsertWinButton.MinimumSize = new System.Drawing.Size(359, 60);
             this.OpenInsertWinButton.Name = "OpenInsertWinButton";
@@ -242,23 +247,22 @@
             // labelForAdmin
             // 
             this.labelForAdmin.AutoSize = true;
+            this.labelForAdmin.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelForAdmin.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelForAdmin.ForeColor = System.Drawing.Color.White;
-            this.labelForAdmin.Location = new System.Drawing.Point(808, 6);
+            this.labelForAdmin.Location = new System.Drawing.Point(810, 0);
             this.labelForAdmin.Name = "labelForAdmin";
             this.labelForAdmin.Size = new System.Drawing.Size(180, 29);
             this.labelForAdmin.TabIndex = 3;
             this.labelForAdmin.Text = "Администратор";
             this.labelForAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseDown);
-            this.labelForAdmin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelForAdmin_MouseMove);
             // 
             // findBox
             // 
-            this.findBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.findBox.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.findBox.Location = new System.Drawing.Point(365, 68);
+            this.findBox.Location = new System.Drawing.Point(3, 72);
+            this.findBox.MaximumSize = new System.Drawing.Size(345, 37);
+            this.findBox.MinimumSize = new System.Drawing.Size(345, 37);
             this.findBox.Name = "findBox";
             this.findBox.Size = new System.Drawing.Size(345, 37);
             this.findBox.TabIndex = 4;
@@ -269,11 +273,12 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.labelForAdmin);
+            this.panel1.Controls.Add(this.findBox);
             this.panel1.Controls.Add(this.labelFName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(359, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(990, 45);
+            this.panel1.Size = new System.Drawing.Size(990, 112);
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -281,28 +286,25 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(1349, 667);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.findBox);
             this.Controls.Add(this.flowLayoutPanelShoeAccounting);
             this.Controls.Add(this.panelForMainMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseMove);
             this.Resize += new System.EventHandler(this.MainMenu_Resize);
             this.panelForMainMenu.ResumeLayout(false);
-            this.panelForMainMenu.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.flowLayoutPanelShoeAccounting.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -322,5 +324,6 @@
         private System.Windows.Forms.TextBox findBox;
         private System.Windows.Forms.Button RefreshListButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

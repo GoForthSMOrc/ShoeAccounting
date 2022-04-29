@@ -12,7 +12,7 @@ namespace ShoeAccounting
 {
     public partial class Authorization : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")] //Скругление углов
 
         private static extern IntPtr CreateRoundRectRgn
     (
