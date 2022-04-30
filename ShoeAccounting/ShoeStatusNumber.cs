@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Тянем статус ремонта обуви в окнах Добавления/Обновления записи.
     internal class ShoeStatusNumber
     {
         public static int ShoeStatusNumbervalue { get; private set; }

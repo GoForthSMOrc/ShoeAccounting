@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
@@ -12,6 +8,7 @@ namespace ShoeAccounting
 {
     public partial class Master : Form
     {
+        //Для скругления углов
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -27,7 +24,7 @@ namespace ShoeAccounting
         {
             InitializeComponent();
             getInfo();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25)); //Для скругления углов
             this.BackColor = System.Drawing.Color.FromArgb(37, 42, 64);
             labelDescription.ForeColor = Color.FromArgb(0, 126, 249);
             labelF.ForeColor = Color.FromArgb(0, 126, 249);

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Проверка, чтобы при удалении номер не оставался
     internal class ControlNUMBER
     {
         public static string CheckNum { get; private set; }

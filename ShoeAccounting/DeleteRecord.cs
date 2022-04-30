@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
@@ -12,6 +8,7 @@ namespace ShoeAccounting
 {
     public partial class DeleteRecord : Form
     {
+        //Для скругления углов
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -26,7 +23,7 @@ namespace ShoeAccounting
         public DeleteRecord()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25)); //Для скругления углов
         }
 
 
@@ -68,11 +65,11 @@ namespace ShoeAccounting
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            //String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";//
             if(NumberCheck.Number == null)
             {
                 NumberCheck.InsertIntoNumber(ControlNUMBER.CheckNum);
             }
+            //String query = "Delete from shoeaccounting where id_shoeaccounting = '" + NumberCheck.Number + "';";
             String query = "call sp_DeleteRecord('" + NumberCheck.Number + "')";
             MySqlConnection conn = DBUtils.GetDBConnection();
             MySqlCommand cmDB = new MySqlCommand(query, conn);

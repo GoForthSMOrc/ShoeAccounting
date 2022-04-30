@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Попытка обновления списка при удалении записи(MainMenu).Там закоменнтировал -> не работает этот класс получается.
     internal class DeleteCheck
     {
         public static bool DeleteCheckMark { get; private set;}

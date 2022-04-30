@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MySql.Data.MySqlClient;
-using SshNet;
-using Renci.SshNet.Common;
+﻿using MySql.Data.MySqlClient;
 
+//Информация о бд
 namespace ShoeAccounting
 {
     internal class DBUtils

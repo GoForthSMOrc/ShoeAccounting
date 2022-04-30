@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Карточка с инфомацией о пользователе
     internal class OurUserInfo
     {
         public static string id_UsersDBInfo { get; private set; }

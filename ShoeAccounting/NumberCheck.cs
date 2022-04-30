@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Работа с нормером выбранной записи в главном меню
     internal class NumberCheck
     {
         public static string Number { get; private set; }

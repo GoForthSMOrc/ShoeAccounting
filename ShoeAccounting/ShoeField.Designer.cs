@@ -50,9 +50,9 @@
             this.showproblemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showproblemButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showproblemButton.ForeColor = System.Drawing.Color.White;
-            this.showproblemButton.Location = new System.Drawing.Point(651, 121);
+            this.showproblemButton.Location = new System.Drawing.Point(662, 123);
             this.showproblemButton.Name = "showproblemButton";
-            this.showproblemButton.Size = new System.Drawing.Size(294, 61);
+            this.showproblemButton.Size = new System.Drawing.Size(271, 46);
             this.showproblemButton.TabIndex = 14;
             this.showproblemButton.Text = "Описание проблемы";
             this.showproblemButton.UseVisualStyleBackColor = false;
@@ -65,9 +65,9 @@
             this.showCommsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showCommsButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.showCommsButton.ForeColor = System.Drawing.Color.White;
-            this.showCommsButton.Location = new System.Drawing.Point(651, 181);
+            this.showCommsButton.Location = new System.Drawing.Point(662, 182);
             this.showCommsButton.Name = "showCommsButton";
-            this.showCommsButton.Size = new System.Drawing.Size(294, 61);
+            this.showCommsButton.Size = new System.Drawing.Size(271, 46);
             this.showCommsButton.TabIndex = 15;
             this.showCommsButton.Text = "Комментарии";
             this.showCommsButton.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@
             this.userinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.userinfoButton.ForeColor = System.Drawing.Color.White;
-            this.userinfoButton.Location = new System.Drawing.Point(651, 60);
+            this.userinfoButton.Location = new System.Drawing.Point(662, 66);
             this.userinfoButton.Name = "userinfoButton";
-            this.userinfoButton.Size = new System.Drawing.Size(294, 61);
+            this.userinfoButton.Size = new System.Drawing.Size(271, 46);
             this.userinfoButton.TabIndex = 19;
             this.userinfoButton.Text = "Пользователь";
             this.userinfoButton.UseVisualStyleBackColor = false;
@@ -128,9 +128,9 @@
             this.masterinfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.masterinfoButton.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.masterinfoButton.ForeColor = System.Drawing.Color.White;
-            this.masterinfoButton.Location = new System.Drawing.Point(651, 0);
+            this.masterinfoButton.Location = new System.Drawing.Point(662, 10);
             this.masterinfoButton.Name = "masterinfoButton";
-            this.masterinfoButton.Size = new System.Drawing.Size(294, 61);
+            this.masterinfoButton.Size = new System.Drawing.Size(271, 46);
             this.masterinfoButton.TabIndex = 20;
             this.masterinfoButton.Text = "Мастер";
             this.masterinfoButton.UseVisualStyleBackColor = false;

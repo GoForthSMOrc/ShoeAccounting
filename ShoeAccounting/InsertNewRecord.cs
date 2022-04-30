@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
@@ -12,6 +8,7 @@ namespace ShoeAccounting
 {
     public partial class InsertNewRecord : Form
     {
+        //Для скругления углов
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -23,10 +20,11 @@ namespace ShoeAccounting
                int nWidthEllipse,
                int nHeightEllipse
            );
+
         public InsertNewRecord()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25)); //Для скругления углов
             dateregBox.MaskInputRejected += new MaskInputRejectedEventHandler(dateregBox_MaskInputRejected);
             dateregBox.KeyDown += new KeyEventHandler(dateregBox_KeyDown);
             datecompBox.MaskInputRejected += new MaskInputRejectedEventHandler(datecompBox_MaskInputRejected);
@@ -59,6 +57,7 @@ namespace ShoeAccounting
             closeWinButton.ForeColor = Color.FromArgb(0, 126, 249);
             closeWinButton.BackColor = Color.FromArgb(37,42,64);
         }
+
         private void dateregBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             if (dateregBox.MaskFull)
@@ -77,6 +76,7 @@ namespace ShoeAccounting
                 toolTipDateCheck.Show("Вы можете добавлять только цифровые символы (0-9) в это поле даты. Формат даты 2022-04-25.", dateregBox, 0, -20, 5000);
             }
         }
+
         void dateregBox_KeyDown(object sender, KeyEventArgs e)
         {
             // The balloon tip is visible for five seconds; if the user types any data before it disappears, collapse it ourselves.

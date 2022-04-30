@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Тянем статус пользователя в выпадающем списке в окне Добавления пользователя.
     internal class StatusUsersDB
     {
         public static int StatusUsersDBvalue { get; private set; }

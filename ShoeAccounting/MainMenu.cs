@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 
 namespace ShoeAccounting
@@ -29,15 +24,16 @@ namespace ShoeAccounting
     );
         */
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] //для перетаскивания окна, но с сохранением возможностей рамки
+        //Для перетаскивания окна, но с сохранением возможностей рамки
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")] 
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
 
+
+
         private int borderSize = 0;
-        
-        
         public MainMenu()
         {
             InitializeComponent();
@@ -108,7 +104,7 @@ namespace ShoeAccounting
             }
         }
 
-        /*public void DeleteCheckInfo()
+        /*public void DeleteCheckInfo() //Попытка сделать обновление списка после удаления записи. Класс DeleteCheck.cs для этого
         {
             if(DeleteCheck.DeleteCheckMark == true)
             {

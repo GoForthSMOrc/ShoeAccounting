@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -11,6 +7,7 @@ namespace ShoeAccounting
 {
     public partial class ExitConfirmation : Form
     {
+        //Для скругления углов
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -28,7 +25,7 @@ namespace ShoeAccounting
         public ExitConfirmation()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25)); //Для скругления углов
             this.BackColor = Color.FromArgb(46, 51, 73);
             panelExitConfirmation.BackColor = Color.FromArgb(24, 30, 54);
             yesButton.ForeColor = Color.FromArgb(0, 126, 249);

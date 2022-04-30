@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
@@ -12,7 +8,8 @@ namespace ShoeAccounting
 {
     public partial class Authorization : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")] //Скругление углов
+        //Для скругления углов
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")] 
 
         private static extern IntPtr CreateRoundRectRgn
     (

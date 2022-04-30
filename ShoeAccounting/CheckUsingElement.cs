@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShoeAccounting
+﻿namespace ShoeAccounting
 {
+    //Проверка используется ли элемент flowLayoutPanel (Используется это когда на панельку кликнули и она поменяла цвет на более темный)
     internal class CheckUsingElement
     {
         public static bool CheckUsing { get; private set; }
